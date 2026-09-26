@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portage — Download, watch and cast from your media server</title>
+<meta name="description" content="Portage is a player and downloader for your own Plex, Emby or Jellyfin server, for iPhone, iPad and Mac. Download for offline, convert for the device you own, cast to any TV or browser.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0D22">
+<meta property="og:title" content="Portage — Download, watch and cast from your media server">
+<meta property="og:description" content="A player and downloader for your own Plex, Emby or Jellyfin server. iPhone, iPad and Mac. No account, no cloud.">
+<meta property="og:image" content="https://portage.rikard.dev/img/og.png">
+<meta property="og:url" content="https://portage.rikard.dev/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<style>
+  :root {
+    --deep: #0B0D22;
+    --deeper: #06071A;
+    --surface: #111327;
+    --line: rgba(255,255,255,.08);
+    --text: #E6E9F5;
+    --muted: #A2A8C4;
+    --dim: #7C819C;
+    --accent: #19D8E6;
+    --blue: #268CFF;
+    --convert: #8A5CF6;
+    --glow: linear-gradient(100deg, #19E2D3 0%, #268CFF 50%, #7B45F6 100%);
+    --radius: 18px;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--deep);
+    color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3 { margin: 0; letter-spacing: -0.01em; line-height: 1.12; }
+  h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 700; }
+  h2 { font-size: clamp(30px, 4.2vw, 44px); font-weight: 700; }
+  h3 { font-size: 21px; font-weight: 600; }
+  p { margin: 0; }
+  .muted { color: var(--muted); }
+  .lede { font-size: clamp(18px, 2vw, 22px); color: var(--muted); max-width: 40ch; }
+
+  /* ambience: the receivers' soft cyan high, violet low-right */
+  .ambience {
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(900px 700px at 18% -10%, rgba(25,226,211,.18), transparent 60%),
+      radial-gradient(1000px 800px at 95% 90%, rgba(123,69,246,.16), transparent 60%),
+      var(--deep);
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    background: rgba(11,13,34,.72);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; gap: 28px; height: 60px; }
+  nav .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 600; }
+  nav .brand img { width: 28px; height: 28px; }
+  nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 15px; }
+  nav .links a { color: var(--muted); }
+  nav .links a:hover { color: var(--text); text-decoration: none; }
+  @media (max-width: 640px) { nav .links { display: none; } }
+
+  .hero { padding: 88px 0 40px; }
+  .hero .wordmark { width: min(420px, 78vw); margin-bottom: 28px; }
+  .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 18px 12px 14px; border-radius: 12px;
+    background: #000; border: 1px solid rgba(255,255,255,.18); color: #fff;
+    font-size: 15px; line-height: 1.1; text-decoration: none;
+  }
+  .badge:hover { text-decoration: none; border-color: rgba(255,255,255,.4); }
+  .badge svg { width: 22px; height: 26px; fill: #fff; }
+  .badge small { display: block; font-size: 11px; opacity: .8; margin-bottom: 2px; }
+  .badge b { font-weight: 600; font-size: 17px; }
+  .hero .note { margin-top: 14px; font-size: 14px; color: var(--dim); }
+
+  .showcase { position: relative; margin: 64px auto 0; max-width: 980px; padding: 0 24px; }
+  .showcase .mac {
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 40px 90px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.12);
+    background: var(--deeper);
+  }
+  .showcase .phone {
+    position: absolute; right: 0; bottom: -40px; width: 24%;
+    border-radius: 26px; overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.14);
+    background: var(--deeper);
+  }
+  @media (max-width: 640px) {
+    .showcase .phone { width: 30%; bottom: -24px; right: 8px; border-radius: 18px; }
+  }
+
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 110px; }
+  @media (max-width: 900px) { .pillars { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .pillars { grid-template-columns: 1fr; } }
+  .pillar {
+    padding: 22px 22px 24px; border-radius: var(--radius);
+    background: rgba(255,255,255,.045); border: 1px solid var(--line);
+  }
+  .pillar .k { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .pillar .k.violet { color: #B39BFF; }
+  .pillar .k.blue { color: #6FB4FF; }
+  .pillar p { color: var(--muted); font-size: 15px; margin-top: 8px; }
+
+  section.feature { padding: 96px 0 0; }
+  .feature .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .feature.flip .grid > .copy { order: 2; }
+  @media (max-width: 800px) {
+    .feature .grid { grid-template-columns: 1fr; gap: 32px; }
+    .feature.flip .grid > .copy { order: 0; }
+  }
+  .feature .k { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
+  .feature ul { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .feature li { padding-left: 26px; position: relative; color: var(--muted); }
+  .feature li::before {
+    content: ""; position: absolute; left: 0; top: .55em; width: 12px; height: 12px; border-radius: 50%;
+    background: var(--glow);
+  }
+  .feature .lede { margin-top: 14px; }
+  .shot { border-radius: 14px; overflow: hidden; background: var(--deeper);
+    box-shadow: 0 30px 70px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.12); }
+  .shot.phone { width: min(320px, 80%); margin: 0 auto; border-radius: 34px; }
+  .shot.pad { width: min(560px, 100%); margin: 0 auto; border-radius: 22px; }
+
+  .works { margin-top: 110px; padding: 40px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .works .row { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: baseline; justify-content: center; }
+  .works .label { color: var(--dim); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+  .works .item { font-size: 20px; font-weight: 600; }
+  .works .item span { color: var(--dim); font-weight: 400; font-size: 15px; margin-left: 6px; }
+
+  .privacy { padding: 96px 0; }
+  .privacy .card {
+    padding: 40px; border-radius: 24px; text-align: center;
+    background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+    border: 1px solid var(--line);
+  }
+  .privacy .card img { width: 72px; height: 72px; margin: 0 auto 18px; }
+  .privacy .card p { max-width: 62ch; margin: 14px auto 0; color: var(--muted); }
+
+  .download { padding: 20px 0 96px; text-align: center; }
+  .download .cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0 60px; font-size: 14px; color: var(--dim); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center; }
+  footer a { color: var(--muted); }
+  footer .legal { flex-basis: 100%; margin-top: 10px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="ambience" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="img/glyph.png" alt="" width="28" height="28">Portage</a>
+    <div class="links">
+      <a href="#download-feature">Download</a>
+      <a href="#convert">Convert</a>
+      <a href="#cast">Cast</a>
+      <a href="#privacy">Privacy</a>
+      <a href="https://tv.rikard.dev/support/">Support</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="wordmark" src="img/wordmark.png" alt="Portage" width="1000" height="383">
+    <h1>Your media server, wherever you are.</h1>
+    <p class="lede" style="margin-top:18px">Download, watch and cast from Plex, Emby or Jellyfin — on iPhone, iPad and Mac. No account, no cloud, nothing to subscribe to.</p>
+    <div class="cta">
+      <a class="badge" href="https://apps.apple.com/app/id6816252844">
+        <svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg>
+        <span><small>Download on the</small><b>App Store</b></span>
+      </a>
+      <a class="badge" href="https://apps.apple.com/app/id6816252844?platform=mac">
+        <svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg>
+        <span><small>Download on the</small><b>Mac App Store</b></span>
+      </a>
+    </div>
+    <p class="note">Free. iPhone and iPad on iOS 26, Mac on macOS 14 or later.</p>
+  </div>
+
+  <div class="showcase">
+    <div class="mac"><img src="img/mac-04-player-cast.webp" alt="Portage on the Mac playing Big Buck Bunny with the cast menu open, listing two Chromecasts, a web browser and AirPlay" width="1600" height="1000"></div>
+    <div class="phone"><img src="img/iphone-04b-player-chrome.webp" alt="Portage on iPhone playing the same film with the player controls showing" width="720" height="1564"></div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="pillars">
+      <div class="pillar">
+        <div class="k">Download</div>
+        <h3>Take it with you</h3>
+        <p>Movies and episodes for offline viewing, in original quality or at a size you choose. Transfers keep going in the background and resume after interruptions.</p>
+      </div>
+      <div class="pillar">
+        <div class="k blue">Watch</div>
+        <h3>A player that keeps up</h3>
+        <p>Play downloads or stream from the server. Switch audio and subtitles, including the tracks inside the file. Picture in Picture, resume where you stopped.</p>
+      </div>
+      <div class="pillar">
+        <div class="k">Cast</div>
+        <h3>Any screen in the house</h3>
+        <p>Chromecast and Google TV, DLNA renderers, AirPlay — or any web browser, on your network or anywhere, paired with a one-time code.</p>
+      </div>
+      <div class="pillar">
+        <div class="k violet">Convert</div>
+        <h3>For the device you own</h3>
+        <p>Turn a file your TV can't play into one it can, right on the device. Presets for Apple TV, Chromecast and iPhone pick the codec and container.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="feature" id="download-feature">
+    <div class="wrap grid">
+      <div class="copy">
+        <div class="k" style="color:var(--accent)">Download</div>
+        <h2>Originals, transcodes, or both</h2>
+        <p class="lede">Grab the file as it sits on the server, or let the server shrink it first. Whole seasons queue in one go.</p>
+        <ul>
+          <li>Background transfers that survive leaving the app and losing the network</li>
+          <li>Your files show up in the Files app on iOS and in Movies on the Mac</li>
+          <li>Every version of a title stays side by side — nothing gets overwritten</li>
+        </ul>
+      </div>
+      <div class="shot phone"><img src="img/iphone-06-download-menu.webp" alt="The download menu on iPhone offering Download Original and Download Transcoded" width="720" height="1564" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature flip" id="convert">
+    <div class="wrap grid">
+      <div class="copy">
+        <div class="k" style="color:#B39BFF">Convert</div>
+        <h2>Convert for the device you own</h2>
+        <p class="lede">Some TVs and browsers can't decode every format. Portage converts on the device, with hardware encoding, and every conversion checkpoints as it goes.</p>
+        <ul>
+          <li>Presets for Apple TV, Chromecast and iPhone pick the right codec and container for you</li>
+          <li>Keep every audio track, pick a subtitle to carry along or burn in</li>
+          <li>Pause, quit, restart — a conversion resumes where it stopped, frame exact</li>
+        </ul>
+      </div>
+      <div class="shot pad"><img src="img/ipad-06-convert-presets.webp" alt="The Convert File sheet on iPad with the Optimize for picker open, listing Apple TV 4K, Chromecast with Google TV and iPhone & iPad" width="1100" height="1467" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature" id="cast">
+    <div class="wrap grid">
+      <div class="copy">
+        <div class="k" style="color:var(--accent)">Cast</div>
+        <h2>Cast to any screen</h2>
+        <p class="lede">Chromecast, Google TV and DLNA renderers on your network. AirPlay. And any web browser: open the receiver page on the screen you want, enter the code, done.</p>
+        <ul>
+          <li>Switch audio tracks on the TV without restarting the film</li>
+          <li>Stay in control from your phone or Mac: seek, pause, pick subtitles</li>
+          <li>Casting a file the TV can't play? Portage offers to convert it first</li>
+        </ul>
+      </div>
+      <div class="shot phone"><img src="img/iphone-04-player-cast.webp" alt="The cast menu on iPhone during playback, listing Kök Display, Living Room TV, Web browser and AirPlay" width="720" height="1564" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="feature flip" id="offline">
+    <div class="wrap grid">
+      <div class="copy">
+        <div class="k" style="color:#6FB4FF">Library</div>
+        <h2>Every version, ready offline</h2>
+        <p class="lede">Downloads and conversions live in one list with their codec, resolution and size in plain sight. Play, cast or convert again from the same row.</p>
+        <ul>
+          <li>Three server types and local folders, side by side in one sidebar</li>
+          <li>Continue Watching, search across every source, Spotlight on your library</li>
+          <li>Local folders play without any server at all</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="img/mac-07-downloads.webp" alt="The Downloads popover on the Mac listing Tears of Steel and Big Buck Bunny with their codecs and sizes" width="1600" height="1000" loading="lazy"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="works">
+      <div class="row">
+        <span class="label">Works with</span>
+        <span class="item">Plex</span>
+        <span class="item">Emby</span>
+        <span class="item">Jellyfin</span>
+        <span class="item">Local folders</span>
+        <span class="item">Chromecast <span>and Google TV</span></span>
+        <span class="item">DLNA</span>
+        <span class="item">AirPlay</span>
+        <span class="item">Web browsers</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="privacy" id="privacy">
+    <div class="wrap">
+      <div class="card">
+        <img src="img/glyph.png" alt="" width="72" height="72">
+        <h2>Your servers, your files, your business</h2>
+        <p>Portage connects to servers you already have access to. It hosts no content, has no account of its own and collects no data. Sign-in tokens live in the Keychain and go nowhere else.</p>
+        <p style="margin-top:18px"><a href="https://tv.rikard.dev/privacy/">Read the privacy policy</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="download" id="get">
+    <div class="wrap">
+      <h2>Get Portage</h2>
+      <p class="muted" style="margin-top:12px">One app for iPhone, iPad and Mac. Free.</p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/app/id6816252844">
+          <svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg>
+          <span><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <a class="badge" href="https://apps.apple.com/app/id6816252844?platform=mac">
+          <svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg>
+          <span><small>Download on the</small><b>Mac App Store</b></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://tv.rikard.dev/support/">Support</a>
+    <a href="https://tv.rikard.dev/privacy/">Privacy policy</a>
+    <a href="mailto:hi@rikard.dev">hi@rikard.dev</a>
+    <span style="margin-left:auto">© 2026 Rikard Wissing</span>
+    <p class="legal">Plex, Emby, Jellyfin, Chromecast, Google TV, AirPlay and Apple TV are trademarks of their respective owners. Portage is an independent app and is not affiliated with or endorsed by any of them.</p>
+  </div>
+</footer>
+</body>
+</html>
