@@ -14,7 +14,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/img/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/site.css?v=2">
+<link rel="stylesheet" href="/site.css?v=4">
+<script src="/ribbon.js?v=2" defer></script>
 </head>
 <body>
 <div class="ambience" aria-hidden="true"></div>
@@ -28,13 +29,13 @@
       <a href="#convert">Convert</a>
       <a href="#tour">Tour</a>
       <a href="/support/">Support</a>
-      <a class="get" href="#get">Get the app</a>
+      <a class="get" href="#get" data-ribbon>Get the app</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <video class="ribbon" src="/img/ribbon.mp4" poster="/img/ribbon.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="ribbon" data-ribbon></div>
   <div class="wrap">
     <div class="chips" aria-label="Works with">
       <span class="chip plex">Plex</span><span class="chip emby">Emby</span><span class="chip jellyfin">Jellyfin</span>
@@ -79,6 +80,7 @@
   <section class="chapter" id="cast">
     <div class="wrap">
       <div class="panel">
+        <div class="ribbon" data-ribbon></div>
         <div class="head center">
           <p class="eyebrow">Cast</p>
           <h2>Cast to <span class="glow">whatever's in the room.</span></h2>
@@ -204,7 +206,7 @@
   </section>
 
   <section class="get" id="get">
-    <video class="ribbon" src="/img/ribbon.mp4" poster="/img/ribbon.jpg" autoplay muted loop playsinline preload="none" aria-hidden="true"></video>
+    <div class="ribbon" data-ribbon></div>
     <div class="wrap">
       <img class="mark" src="/img/glyph.png" alt="" width="72" height="72">
       <h2>Get <span class="glow">Portage.</span></h2>
@@ -230,17 +232,6 @@
 <script>
 (() => {
   const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const ribbons = Array.from(document.querySelectorAll("video.ribbon"));
-  if (still) ribbons.forEach((v) => v.pause());
-  else {
-    const onScreen = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) { e.target.preload = "auto"; e.target.play().catch(() => {}); } else e.target.pause();
-      }
-    });
-    ribbons.forEach((v) => onScreen.observe(v));
-  }
-
   const video = document.getElementById("tour-video");
   const buttons = Array.from(document.querySelectorAll("#tour-scenes button"));
   if (!video) return;

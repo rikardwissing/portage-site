@@ -67,8 +67,16 @@ nav .brand img { width: 28px; height: 28px; }
 nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 15px; align-items: center; }
 nav .links a { color: var(--muted); }
 nav .links a:hover { color: var(--text); text-decoration: none; }
-nav .links .get { color: var(--deep); background: var(--accent); padding: 7px 14px; border-radius: 999px; font-weight: 600; }
-nav .links .get:hover { background: #4FE6F0; }
+nav .links .get {
+  position: relative; overflow: hidden; isolation: isolate;
+  color: #fff; background: var(--deep); padding: 8px 17px; border-radius: 999px; font-weight: 600;
+  border: 1px solid rgba(25,216,230,.55); text-shadow: 0 1px 8px rgba(0,0,0,.7);
+  box-shadow: 0 6px 22px rgba(38,140,255,.28), inset 0 1px 0 rgba(255,255,255,.12);
+  transition: border-color .2s, box-shadow .2s;
+}
+nav .links .get:hover { color: #fff; border-color: rgba(25,216,230,.95); box-shadow: 0 8px 30px rgba(25,216,230,.4), inset 0 1px 0 rgba(255,255,255,.16); }
+nav .links .get > .ribbon-svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; transform: scale(2.2); transition: filter .3s; }
+nav .links .get:hover > .ribbon-svg { filter: brightness(1.45) saturate(1.2); }
 @media (max-width: 760px) { nav .links a:not(.get) { display: none; } }
 
 .badge {
@@ -102,8 +110,9 @@ nav .links .get:hover { background: #4FE6F0; }
 .hero { position: relative; padding: 96px 0 0; text-align: center; isolation: isolate; }
 .hero::before, .hero .ribbon, section.get::before, section.get .ribbon {
   position: absolute; left: 0; right: 0; z-index: -1;
-  width: 100%; object-fit: cover; pointer-events: none;
+  width: 100%; pointer-events: none;
 }
+.ribbon > .ribbon-svg { display: block; width: 100%; height: 100%; }
 .hero::before, .hero .ribbon {
   top: 0; height: min(1100px, 130vh);
   -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
@@ -179,10 +188,12 @@ section.chapter { position: relative; padding: 168px 0 0; isolation: isolate; ov
 .panel {
   position: relative; overflow: hidden; isolation: isolate;
   border-radius: 40px; padding: 72px 6% 64px;
-  background: linear-gradient(180deg, rgba(11,13,34,.25), rgba(11,13,34,.75)), url("/img/ribbon.jpg") center 30% / cover;
+  background: var(--deep);
   border: 1px solid rgba(255,255,255,.1);
   box-shadow: 0 50px 120px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.08);
 }
+.panel > .ribbon { position: absolute; inset: 0 0 auto; height: 78%; z-index: -1; }
+.panel::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(11,13,34,.1) 0%, rgba(11,13,34,.35) 45%, var(--deep) 78%); }
 @media (max-width: 640px) { .panel { border-radius: 28px; padding: 48px 20px 36px; } }
 .cast-figure { max-width: 960px; margin: 104px auto 0; padding-bottom: 150px; }
 @media (max-width: 640px) {
@@ -274,7 +285,6 @@ footer .legal { flex-basis: 100%; margin-top: 10px; font-size: 13px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  video.ribbon { display: none; }
 }
 
 /* article pages: support, privacy */
