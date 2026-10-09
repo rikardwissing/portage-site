@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portage — One app for Plex, Emby and Jellyfin</title>
-<meta name="description" content="Watch, download and cast from your own Plex, Emby or Jellyfin server. Cast to any TV or any browser, even the one in your car. iPhone, iPad and Mac.">
+<meta name="description" content="Stream, download and cast from your own Plex, Emby or Jellyfin server. Cast to any TV or any browser, even the one in your car. iPhone, iPad and Mac.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0B0D22">
 <meta property="og:title" content="Portage — Your library, everywhere">
-<meta property="og:description" content="Watch, download and cast from your own Plex, Emby or Jellyfin server. iPhone, iPad and Mac.">
+<meta property="og:description" content="Stream, download and cast from your own Plex, Emby or Jellyfin server. iPhone, iPad and Mac.">
 <meta property="og:image" content="https://portage.rikard.dev/img/og.png">
 <meta property="og:url" content="https://portage.rikard.dev/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/img/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/site.css?v=4">
+<link rel="stylesheet" href="/site.css?v=5">
 <script src="/ribbon.js?v=2" defer></script>
 </head>
 <body>
@@ -24,6 +24,7 @@
   <div class="wrap">
     <a class="brand" href="/"><img src="/img/glyph.png" alt="" width="28" height="28">Portage</a>
     <div class="links">
+      <a href="#stream">Stream</a>
       <a href="#download">Download</a>
       <a href="#cast">Cast</a>
       <a href="#convert">Convert</a>
@@ -41,7 +42,7 @@
       <span class="chip plex">Plex</span><span class="chip emby">Emby</span><span class="chip jellyfin">Jellyfin</span>
     </div>
     <h1>Your library, <span class="glow">everywhere.</span></h1>
-    <p class="lede">Watch, download and cast from your own media server. On iPhone, iPad and Mac.</p>
+    <p class="lede">Stream, download and cast from your own media server. On iPhone, iPad and Mac.</p>
     <div class="cta">
       <a class="badge" href="https://apps.apple.com/app/id6816252844"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
       <a class="badge" href="https://apps.apple.com/app/id6816252844?platform=mac"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>Mac App Store</b></span></a>
@@ -57,6 +58,27 @@
 </header>
 
 <main>
+  <section class="chapter tint-blue" id="stream">
+    <div class="wrap split flip">
+      <div class="head">
+        <p class="eyebrow">Stream</p>
+        <h2>Press play. <span class="glow">No download needed.</span></h2>
+        <p class="lede">Anything on your server plays straight away. Portage streams the original file whenever your device can play it, so every audio and subtitle track stays switchable. On a slow connection, pick the size before you press play.</p>
+        <ul class="points">
+          <li>The original file by default, every track switchable</li>
+          <li>Resolution, video and audio format, chosen up front</li>
+          <li>Cast the stream to Chromecast, DLNA or a browser on your network</li>
+        </ul>
+      </div>
+      <div class="backlit stream-phone">
+        <div class="device iphone">
+          <img src="/img/stream-sheet.webp" alt="The Stream sheet on iPhone over Elephants Dream: Play the original file is on, with Video format, Resolution and Audio format below" width="760" height="1551" loading="lazy">
+          <div class="screen"><svg class="arrows" viewBox="0 0 1320 2868" aria-hidden="true"><path d="M520 2600Q710 2146 1032 1774M1032 1774L1022 1819M1032 1774L988 1790"/></svg><span class="note" style="left:39.39%;top:90.66%">The original file,<br>or a size you pick</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="chapter tint-cyan" id="download">
     <div class="wrap split">
       <div class="head">
@@ -185,6 +207,10 @@
       <details open>
         <summary>Do I need a media server?</summary>
         <p>Portage is a client for a Plex, Emby or Jellyfin server you already have. Without one, you can point it at a folder of video files and use that as a library.</p>
+      </details>
+      <details>
+        <summary>Do I have to download before I can watch?</summary>
+        <p>No. Anything on your server streams straight away, as the original file whenever your device can play it. Download when you want it with you offline.</p>
       </details>
       <details>
         <summary>How do I cast to a browser?</summary>
