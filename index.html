@@ -3,10 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portage — One app for Plex, Emby and Jellyfin</title>
-<meta name="description" content="Stream, download and cast from your own Plex, Emby or Jellyfin server. Cast to any TV or any browser, even the one in your car. iPhone, iPad and Mac.">
+<title>Portage — Plex, Emby and Jellyfin player for iPhone, iPad and Mac</title>
+<meta name="description" content="Stream, download for offline and cast from your own Plex, Emby or Jellyfin server, to Chromecast, DLNA TVs or any browser. For iPhone, iPad and Mac.">
+<link rel="canonical" href="https://portage.rikard.dev/">
+<meta name="apple-itunes-app" content="app-id=6816252844">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0B0D22">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Portage">
 <meta property="og:title" content="Portage — Your library, everywhere">
 <meta property="og:description" content="Stream, download and cast from your own Plex, Emby or Jellyfin server. iPhone, iPad and Mac.">
 <meta property="og:image" content="https://portage.rikard.dev/img/og.png">
@@ -16,6 +20,87 @@
 <link rel="apple-touch-icon" href="/img/icon-180.png">
 <link rel="stylesheet" href="/site.css?v=5">
 <script src="/ribbon.js?v=2" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "Portage: Media Server Player",
+ "alternateName": "Portage",
+ "description": "A player and downloader for your own Plex, Emby or Jellyfin server. Stream, download for offline viewing, convert, and cast to Chromecast, DLNA TVs, AirPlay or any web browser.",
+ "applicationCategory": "MultimediaApplication",
+ "operatingSystem": "iOS 26, iPadOS 26, macOS 14 or later",
+ "url": "https://portage.rikard.dev/",
+ "downloadUrl": "https://apps.apple.com/app/id6816252844",
+ "installUrl": "https://apps.apple.com/app/id6816252844",
+ "image": "https://portage.rikard.dev/img/og.png",
+ "screenshot": "https://portage.rikard.dev/img/hero-iphone.webp",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ },
+ "author": {
+  "@type": "Person",
+  "name": "Rikard Wissing"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Do I need a media server?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Portage is a client for a Plex, Emby or Jellyfin server you already have. Without one, you can point it at a folder of video files and use that as a library."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do I have to download before I can watch?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Anything on your server streams straight away, at full quality as the original file whenever your device can play it. Download when you want it with you offline."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I cast to a browser?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Open tv.rikard.dev in any browser: a laptop, a smart TV, a car's screen. It shows a code. Pick Web browser in Portage's cast menu and type the code, or scan it on iPhone. It works on your own network and away from it."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it work away from home?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "If your server is reachable from outside your network, yes, the same way the official apps reach it. Anything you've downloaded plays without any connection."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do I need a Plex Pass to download?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Portage downloads with the access your server already gives your account."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is Portage affiliated with Plex, Emby or Jellyfin?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. It's an independent app that talks to their servers. It has no account of its own and hosts no content."
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body>
 <div class="ambience" aria-hidden="true"></div>
