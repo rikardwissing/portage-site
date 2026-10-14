@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jellyfin app for iPhone, iPad and Mac — Portage</title>
+<meta name="description" content="A Jellyfin app for iPhone, iPad and Mac. Stream the original file, download for offline, cast to Chromecast, DLNA or a browser, and convert on device. Free.">
+<link rel="canonical" href="https://portage.rikard.dev/jellyfin/">
+<meta name="apple-itunes-app" content="app-id=6816252844">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0D22">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Portage">
+<meta property="og:title" content="Portage — a Jellyfin app for iPhone, iPad and Mac">
+<meta property="og:description" content="Stream, download for offline and cast from your Jellyfin server. Free.">
+<meta property="og:image" content="https://portage.rikard.dev/img/og.png">
+<meta property="og:url" content="https://portage.rikard.dev/jellyfin/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<link rel="stylesheet" href="/site.css?v=6">
+<script src="/ribbon.js?v=2" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "Portage: Media Server Player",
+ "alternateName": "Portage",
+ "description": "A Jellyfin app for iPhone, iPad and Mac: stream the original file, download for offline viewing, cast to Chromecast, DLNA TVs, AirPlay or any web browser, and convert files on the device.",
+ "applicationCategory": "MultimediaApplication",
+ "operatingSystem": "iOS 26, iPadOS 26, macOS 14 or later",
+ "url": "https://portage.rikard.dev/",
+ "downloadUrl": "https://apps.apple.com/app/id6816252844",
+ "installUrl": "https://apps.apple.com/app/id6816252844",
+ "image": "https://portage.rikard.dev/img/og.png",
+ "featureList": [
+  "Jellyfin server sign-in by address",
+  "Direct play of the original file",
+  "Offline downloads: original, server transcoded, or converted on device",
+  "Casting to Chromecast, Google TV, DLNA, AirPlay and web browsers",
+  "On-device conversion with presets for Apple TV, Chromecast and iPhone",
+  "Watch progress saved to the server"
+ ],
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ },
+ "author": {
+  "@type": "Person",
+  "name": "Rikard Wissing"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Is Portage the official Jellyfin app?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Portage is an independent app, not made by or affiliated with Jellyfin. It connects to your Jellyfin server like any other client, with your own Jellyfin user."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it work away from home?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "If your Jellyfin server is reachable from outside your network, yes, the same way the official apps reach it. Anything you've downloaded plays with no connection at all."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does my server have to transcode?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "For streaming, only when the original file can't play on your device. Portage plays the file itself whenever it can, and conversions for a TV run on your iPhone, iPad or Mac, not on the server."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What do I need?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "A Jellyfin server you can sign in to, and an iPhone or iPad on iOS 26 or a Mac on macOS 14 or later. Portage is free, with no account of its own and no ads."
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body class="landing-page">
+<div class="ambience" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/img/glyph.png" alt="" width="28" height="28">Portage</a>
+    <div class="links">
+      <a href="/plex/">Plex</a>
+      <a href="/emby/">Emby</a>
+      <a href="/jellyfin/" aria-current="page">Jellyfin</a>
+      <a href="/cast-to-car/">Cast to a car</a>
+      <a href="/support/">Support</a>
+      <a class="get" href="#get" data-ribbon>Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero landing">
+  <div class="ribbon" data-ribbon></div>
+  <div class="wrap">
+    <div class="chips"><span class="chip jellyfin">Jellyfin</span></div>
+    <h1>Jellyfin app for <span class="glow">iPhone, iPad and Mac.</span></h1>
+    <p class="lede">Watch your Jellyfin library at full quality, take it with you offline, and cast it to the TV. One free app on iPhone, iPad and Mac.</p>
+    <div class="cta">
+        <a class="badge" href="https://apps.apple.com/app/id6816252844"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="badge" href="https://apps.apple.com/app/id6816252844?platform=mac"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>Mac App Store</b></span></a>
+      </div>
+    <p class="facts">Free · iOS 26 or macOS 14 and later · Not made by or affiliated with Jellyfin</p>
+  </div>
+  <div class="stage">
+    <img class="window" src="/img/hero-mac.webp" alt="Portage on a Mac with a Jellyfin server in the sidebar, Continue Watching across the top and the library below" width="1800" height="1170">
+    <div class="device iphone">
+      <img src="/img/hero-iphone.webp" alt="Portage on iPhone: Continue Watching and a Jellyfin library" width="760" height="1551">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="chapter tint-blue" id="connect">
+    <div class="wrap split flip">
+      <div class="head">
+        <p class="eyebrow">Connect</p>
+        <h2>Your server, <span class="glow">signed in once.</span></h2>
+        <p class="lede">Pick <b>Add a Jellyfin server…</b>, type its address and sign in with your Jellyfin user. That's the whole setup.</p>
+        <ul class="points">
+          <li>An address like 192.168.1.100:8096 at home, or https://media.example.com from anywhere</li>
+          <li>Your libraries, Continue Watching and search, straight from the server</li>
+          <li>Where you stop is saved on the server, so Jellyfin on your TV or in a browser carries on from there</li>
+          <li>Room for more: another Jellyfin, an Emby or a Plex server, all in one library</li>
+        </ul>
+      </div>
+      <div class="backlit">
+        <div class="device ipad">
+          <img src="/img/library-ipad.webp" alt="Portage on iPad: a Jellyfin server in the sidebar, with its Continue Watching row and library" width="1600" height="1227" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-cyan" id="stream">
+    <div class="wrap split">
+      <div class="head">
+        <p class="eyebrow">Stream</p>
+        <h2>The original file, <span class="glow">not a copy.</span></h2>
+        <p class="lede">Portage asks Jellyfin for the file itself whenever your device can play it. Full picture, full sound, and nothing for the server to transcode. That matters when Jellyfin runs on a NAS or a small box.</p>
+        <ul class="points">
+          <li>Every audio and subtitle track, switchable while it plays</li>
+          <li>Jellyfin only transcodes when the original can't play here</li>
+          <li>On a slow connection, you pick the size before it starts</li>
+          <li>Picture in Picture, and pinch to fill the screen</li>
+        </ul>
+      </div>
+      <div class="backlit one-phone">
+        <div class="device iphone">
+          <img src="/img/stream-sheet.webp" alt="The Stream sheet on iPhone over Sprite Fright: Play the original file is on, with Video format, Resolution and Audio format below" width="760" height="1551" loading="lazy">
+          <div class="screen"><svg class="arrows" viewBox="0 0 1320 2868" aria-hidden="true"><path d="M520 2600Q710 2146 1032 1774M1032 1774L1022 1819M1032 1774L988 1790"/></svg><span class="note" style="left:39.39%;top:90.66%">The original file,<br>or a size you pick</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-violet" id="download">
+    <div class="wrap split flip">
+      <div class="head">
+        <p class="eyebrow">Download</p>
+        <h2>Jellyfin, <span class="glow">offline.</span></h2>
+        <p class="lede">Download a film or a whole season before a flight. It's a real file: in the Files app on iPhone and iPad, and in a folder you pick on the Mac.</p>
+        <ul class="points">
+          <li><b>Download Original:</b> the untouched file, every track inside it</li>
+          <li><b>Download Transcoded:</b> Jellyfin makes a smaller copy. Pick the audio, a subtitle and the quality, and see the size first</li>
+          <li><b>Download &amp; Transcode:</b> the original comes down, then Portage converts it on your device for the screen you pick</li>
+          <li>Downloads carry on in the background and resume after interruptions</li>
+        </ul>
+      </div>
+      <div class="backlit one-phone">
+        <div class="device iphone">
+          <img src="/img/download-menu.webp" alt="A film page on iPhone with the download menu open: Download Original, Download Transcoded, Download and Transcode" width="760" height="1551" loading="lazy">
+          <div class="screen"><svg class="arrows" viewBox="0 0 1320 2868" aria-hidden="true"><path d="M700 2080Q497 1657 641 1211M641 1211L650 1256M641 1211L608 1243"/></svg><span class="note" style="left:53.03%;top:72.52%">The untouched original</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-cyan" id="cast">
+    <div class="wrap split">
+      <div class="head">
+        <p class="eyebrow">Cast</p>
+        <h2>Jellyfin on <span class="glow">the big screen.</span></h2>
+        <p class="lede">Chromecast, Google TV and DLNA TVs on your network show up on their own, with AirPlay in the same menu. Your phone stays the remote.</p>
+        <ul class="points">
+          <li>Casts the original file when the TV can play it, even an MKV</li>
+          <li>Pause, seek and switch audio or subtitles from your phone</li>
+          <li><a href="/cast-to-car/">Any browser works, even your car's</a>: open tv.rikard.dev and type the code it shows</li>
+        </ul>
+      </div>
+      <div class="backlit">
+        <div class="device iphone-landscape">
+          <img src="/img/cast-iphone.webp" alt="Portage on an iPhone held sideways, playing Big Buck Bunny, with the cast menu listing two TVs, a web browser and AirPlay" width="1800" height="882" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-violet" id="convert">
+    <div class="wrap">
+      <div class="head center">
+        <p class="eyebrow">Convert</p>
+        <h2>Converted <span class="glow">on your device.</span></h2>
+        <p class="lede">When a file won't play on a TV, Portage makes a copy that will, on your iPhone, iPad or Mac. Your Jellyfin server doesn't do the work. Presets for Apple TV, Chromecast and iPhone pick the codec and container, and a paused conversion carries on where it stopped.</p>
+      </div>
+      <div class="convert-stage backlit">
+        <div class="device ipad">
+          <img src="/img/convert-ipad.webp" alt="The Convert sheet on iPad with presets for Apple TV 4K, Chromecast with Google TV and iPhone and iPad" width="1600" height="1227" loading="lazy">
+          <div class="screen"><svg class="arrows" viewBox="0 0 2752 2064" aria-hidden="true"><path d="M640 1700Q764 1152 1231 840M1231 840L1208 885M1231 840L1181 845"/></svg><span class="note" style="left:23.26%;top:82.36%">A preset for each<br>of your screens</span></div>
+        </div>
+        <div class="device iphone">
+          <img src="/img/convert-queue.webp" alt="The Conversions tab on iPhone with one conversion paused partway and two finished" width="760" height="1551" loading="lazy">
+          <div class="screen"><svg class="arrows" viewBox="0 0 1320 2868" aria-hidden="true"><path d="M700 1400Q1046 1060 1062 575M1062 575L1085 621M1062 575L1035 619"/></svg><span class="note" style="left:53.03%;top:48.81%">Resumable</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2>Questions</h2>
+      <details open>
+        <summary>Is Portage the official Jellyfin app?</summary>
+        <p>No. Portage is an independent app, not made by or affiliated with Jellyfin. It connects to your Jellyfin server like any other client, with your own Jellyfin user.</p>
+      </details>
+      <details>
+        <summary>Does it work away from home?</summary>
+        <p>If your Jellyfin server is reachable from outside your network, yes, the same way the official apps reach it. Anything you've downloaded plays with no connection at all.</p>
+      </details>
+      <details>
+        <summary>Does my server have to transcode?</summary>
+        <p>For streaming, only when the original file can't play on your device. Portage plays the file itself whenever it can, and conversions for a TV run on your iPhone, iPad or Mac, not on the server.</p>
+      </details>
+      <details>
+        <summary>What do I need?</summary>
+        <p>A Jellyfin server you can sign in to, and an iPhone or iPad on iOS 26 or a Mac on macOS 14 or later. Portage is free, with no account of its own and no ads.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="wrap">
+      <h2>More about <span class="glow">Portage.</span></h2>
+      <div class="cards">
+        <a class="card plex" href="/plex/"><h3>Plex player and downloader</h3><p>Download from your Plex server with no Plex Pass, stream the original file, cast it anywhere.</p></a>
+        <a class="card emby" href="/emby/"><h3>Emby player</h3><p>Sign in with Emby Connect or a server address, then stream, download and cast.</p></a>
+        <a class="card browser" href="/cast-to-car/"><h3>Cast to your car</h3><p>Your server on the car's screen, with a code and your phone as the remote.</p></a>
+        <a class="card blue" href="/"><h3>Everything Portage does</h3><p>Streaming, downloads, casting and conversion, with a short tour.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="get" id="get">
+    <div class="ribbon" data-ribbon></div>
+    <div class="wrap">
+      <img class="mark" src="/img/glyph.png" alt="" width="72" height="72">
+      <h2>Get <span class="glow">Portage.</span></h2>
+      <p class="lede">iPhone, iPad and Mac. Free.</p>
+      <div class="cta">
+        <a class="badge" href="https://apps.apple.com/app/id6816252844"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+        <a class="badge" href="https://apps.apple.com/app/id6816252844?platform=mac"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>Mac App Store</b></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="pages">
+      <a href="/plex/">Plex player and downloader</a>
+      <a href="/emby/">Emby player</a>
+      <a href="/jellyfin/">Jellyfin app</a>
+      <a href="/cast-to-car/">Cast to your car</a>
+    </div>
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="mailto:hi@rikard.dev">hi@rikard.dev</a>
+    <span style="margin-left:auto">© 2026 Rikard Wissing</span>
+    <p class="legal">Plex, Emby, Jellyfin, Chromecast, Google TV, AirPlay and Apple TV are trademarks of their respective owners. Portage is an independent app and is not affiliated with or endorsed by any of them.</p>
+  </div>
+</footer>
+</body>
+</html>
