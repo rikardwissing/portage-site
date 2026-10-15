@@ -4,6 +4,9 @@ Marketing site for Portage, the media-server player and downloader for
 iPhone, iPad and Mac. Plain HTML and CSS, served by GitHub Pages from `main`.
 
 - `index.html` — the page
+- `scripts/indexnow.sh` — tells Bing and the other IndexNow engines about
+  changed pages after a deploy: no arguments sends every sitemap URL, or
+  pass paths like `/tesla/`. The key file at the root must stay
 - `img/` — brand assets and screenshots, made from the app repo's
   `appstore/raw/` captures: device shots are composited into Apple's Silver
   frames (`appstore/frames/`, never published bare), the ribbon loop and the
