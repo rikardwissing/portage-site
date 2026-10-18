@@ -544,7 +544,7 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 .sc-menu hr { border: 0; height: 1px; background: rgba(255,255,255,.14); margin: .5cqw 0; }
 .scene.s-pick .sc-scr-phone .sc-lr, .scene.s-pick .sc-scr-ipad .sc-lr { background: rgba(25,216,230,.22); }
 .scene.s-pick .sc-scr-mac .sc-lr { background: #2f6bd6; }
-.sc-island { position: absolute; left: 1.743%; top: 46.21%; width: 2.324%; height: 14.39%; border-radius: 999px; background: #000; }
+.sc-island { position: absolute; left: 1.534%; top: 35.83%; width: 3.731%; height: 28.26%; border-radius: 999px; background: #000; }
 .sc-pill {
   position: absolute; left: 50%; top: 5.6cqw; transform: translateX(-50%); display: inline-flex; align-items: center; gap: .6cqw;
   font-size: 1.36cqw; font-weight: 500; color: var(--accent); white-space: nowrap;
