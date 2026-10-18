@@ -369,6 +369,11 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 .sc-pause[hidden] { display: none; }
 .sc-pause span { width: 10px; height: 12px; border-left: 3px solid #fff; border-right: 3px solid #fff; box-sizing: border-box; }
 .sc-pause[aria-pressed="true"] span { width: 0; height: 0; border: 0; margin-left: 3px; border-left: 11px solid #fff; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.sc-pause { width: 28px; height: 28px; opacity: .4; background: rgba(11,13,34,.55); border-color: rgba(255,255,255,.18); transition: opacity .25s ease; }
+.sc-pause span { width: 8px; height: 10px; border-left-width: 2.5px; border-right-width: 2.5px; }
+.sc-pause[aria-pressed="true"] span { margin-left: 2px; border-left-width: 9px; border-top-width: 6px; border-bottom-width: 6px; }
+.sc-pause:focus-visible, .sc-pause[aria-pressed="true"] { opacity: 1; }
+@media (hover: hover) { .scene-wrap:hover .sc-pause { opacity: 1; } }
 .sc-steps { list-style: none; margin: 0; padding: 0 0 0 3%; display: flex; justify-content: flex-start; flex-wrap: wrap; gap: 8px; }
 .sc-steps li { font: 600 13px/1 var(--rounded); color: var(--dim); padding: 7px 11px; border-radius: 999px; border: 1px solid transparent; transition: color .3s, border-color .3s, background .3s; }
 .sc-steps li.on { color: #fff; border-color: rgba(25,216,230,.5); background: rgba(25,216,230,.1); }
