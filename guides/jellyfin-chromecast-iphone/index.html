@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cast Jellyfin to a Chromecast from an iPhone — Portage</title>
+<meta name="description" content="Cast your Jellyfin library from an iPhone to a Chromecast or Google TV with Portage. The original file plays when the Chromecast can play it, MKVs included, and your iPhone is the remote.">
+<link rel="canonical" href="https://portage.rikard.dev/guides/jellyfin-chromecast-iphone/">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0D22">
+<meta name="apple-itunes-app" content="app-id=6816252844">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Portage">
+<meta property="og:title" content="Jellyfin to a Chromecast from an iPhone">
+<meta property="og:description" content="Add your Jellyfin server to Portage, tap the cast button and pick the Chromecast. Your iPhone is the remote.">
+<meta property="og:image" content="https://portage.rikard.dev/img/og.png">
+<meta property="og:url" content="https://portage.rikard.dev/guides/jellyfin-chromecast-iphone/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/favicon-96.png" sizes="96x96" type="image/png">
+<link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="icon" href="/img/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<link rel="stylesheet" href="/site.css?v=8">
+<script src="/ribbon.js?v=2" defer></script>
+</head>
+<body>
+<div class="ambience" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/img/glyph.png" alt="" width="28" height="28">Portage</a>
+    <div class="links">
+      <a href="/#your-tv">Your TV</a>
+      <a href="/#features">Features</a>
+      <a href="#guides">Guides</a>
+      <a href="/#story">Story</a>
+      <a href="/support/">Support</a>
+      <a class="get" href="#get" data-ribbon>Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero guide">
+  <div class="ribbon" data-ribbon></div>
+  <div class="wrap">
+    <p class="crumb"><a href="/">Portage</a><span>/</span><span>Guides</span><span>/</span><span>Jellyfin to a Chromecast</span></p>
+    <h1>Jellyfin to a Chromecast <span class="glow">from an iPhone.</span></h1>
+    <p class="lede">Portage is a Jellyfin client for iPhone that casts to a Chromecast or a Google TV. Add your server once, tap the cast button, and your iPhone is the remote.</p>
+    <div class="cta"><a class="badge" href="https://apps.apple.com/app/apple-store/id6816252844?ct=site-guides-jellyfin-chromecast-iphone&mt=8"><img src="/img/app-store-badge.svg" alt="Download on the App Store" width="120" height="40"></a><span class="platforms">For iPhone, iPad and Mac</span></div>
+  </div>
+</header>
+
+<main>
+  <section class="guide-body">
+    <div class="wrap">
+      <ol class="guide-steps">
+        <li id="step-1">
+          <span class="n">Step 1</span>
+          <div class="mini"><div class="mock-menu" role="img" aria-label="Portage's Add a source menu, with Add a Jellyfin server highlighted"><small>Add a source</small><span>Add a Plex account…</span><span>Add an Emby Connect account…</span><span>Add an Emby server…</span><span class="on">Add a Jellyfin server…</span></div></div>
+          <h3>Add your Jellyfin server</h3>
+          <p>In Portage, pick <b>Add a Jellyfin server…</b>, type its address and sign in with your Jellyfin user.</p>
+        </li>
+        <li id="step-2">
+          <span class="n">Step 2</span>
+          <div class="mini"><img src="/img/sintel-iphone.webp" alt="Portage on an iPhone held sideways, playing Sintel, with the cast menu listing two TVs, a web browser and AirPlay" width="1800" height="882" loading="lazy"></div>
+          <h3>Tap the cast button</h3>
+          <p>Play a film or an episode, tap the cast button and pick your Chromecast. It shows up on its own when your iPhone is on the same Wi-Fi. Allow Local Network the first time Portage asks.</p>
+        </li>
+        <li id="step-3">
+          <span class="n">Step 3</span>
+          <div class="mini"><div class="mock-tv"><img src="/img/sintel-poster.webp" alt="Sintel playing on a TV through a Chromecast" width="1152" height="491" loading="lazy"><span class="mock-badge">Chromecast</span></div></div>
+          <h3>Watch on the TV</h3>
+          <p>Pause, seek and switch audio or subtitles from your iPhone. Tracks inside the file switch without restarting the film.</p>
+        </li>
+      </ol>
+
+      <div class="callout"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.8l5 3.2-5 3.2z"/></svg><p><b>The original file, even an MKV.</b> When the Chromecast can play the file, Portage sends it as it is, so your Jellyfin server has nothing to transcode.</p></div>
+
+      <div class="need">
+        <div>
+          <h3>What you need</h3>
+          <ul class="ticks">
+            <li>An iPhone or iPad with Portage, on iOS 26 or later</li>
+            <li>A Chromecast or a TV with Google TV, on the same Wi-Fi as your iPhone</li>
+            <li>A Jellyfin server you can sign in to</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Other ways, and what they cost</h3>
+          <ul class="ticks other">
+            <li><b>Jellyfin’s app on a Google TV.</b> Needs the app installed on the TV and your Jellyfin user signed in there. The app is free.</li>
+            <li><b>Jellyfin in Chrome on a computer.</b> Needs a computer with Chrome on the same Wi-Fi, where Jellyfin’s web player casts to the Chromecast. Free.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-sec">
+        <h2>When the Chromecast can’t play a file</h2>
+        <p>Older Chromecasts don’t play HEVC, for example. Portage lets the Chromecast try the original first. If it can’t play it, Portage says so and can make a copy that will, on your iPhone, with the preset for your Chromecast. Nothing is uploaded, and your server does no extra work.</p>
+      </div>
+
+      <div class="head guide-head"><h2>Questions</h2></div>
+      <div class="questions">
+        <details open>
+          <summary>Does my Jellyfin server have to transcode?</summary>
+          <p>Not when the Chromecast plays the original file. Portage sends it as it is whenever it can, and any copy for the TV is made on your iPhone, not on the server.</p>
+        </details>
+        <details>
+          <summary>Can I cast a film I’ve downloaded?</summary>
+          <p>Yes. It plays from your iPhone to the Chromecast over your Wi-Fi.</p>
+        </details>
+        <details>
+          <summary>What if my iPhone loses Wi-Fi?</summary>
+          <p>The TV keeps playing, and Portage reconnects to it, showing “Reconnecting to…” until it’s back.</p>
+        </details>
+        <details>
+          <summary>Is Portage made by Jellyfin?</summary>
+          <p>No. Portage works with your Jellyfin server, but Jellyfin doesn’t make or endorse it.</p>
+        </details>
+      </div>
+
+      <div class="related-guides">
+        <a href="/guides/plex-chromecast-iphone/">Plex to a Chromecast or smart TV<span>From an iPhone</span></a>
+        <a href="/guides/hotel-tv/">A hotel or Airbnb TV<span>Through its web browser</span></a>
+        <a href="/guides/offline-flight/">Your library on a flight<span>Downloads in airplane mode</span></a>
+        <a href="/jellyfin/">A Jellyfin client<span>Portage on iPhone, iPad and Mac</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="get" id="get">
+    <div class="ribbon" data-ribbon></div>
+    <div class="wrap">
+      <img class="mark" src="/img/glyph.png" alt="" width="72" height="72">
+      <h2>Get <span class="glow">Portage.</span></h2>
+      <div class="cta"><a class="badge" href="https://apps.apple.com/app/apple-store/id6816252844?ct=site-guides-jellyfin-chromecast-iphone&mt=8"><img src="/img/app-store-badge.svg" alt="Download on the App Store" width="120" height="40"></a><span class="platforms">For iPhone, iPad and Mac</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="columns">
+      <div id="guides"><b>Guides</b><a href="/guides/hotel-tv/">A hotel or Airbnb TV</a><a href="/guides/jellyfin-chromecast-iphone/" aria-current="page">Jellyfin to a Chromecast from an iPhone</a><a href="/guides/plex-chromecast-iphone/">Plex to a Chromecast from an iPhone</a><a href="/guides/offline-flight/">Your library on a flight</a><a href="/cast-to-car/">Watch in your car</a><a href="/xbox/">Cast to an Xbox</a></div>
+      <div><b>Works with</b><a href="/plex/">Plex</a><a href="/emby/">Emby</a><a href="/jellyfin/">Jellyfin</a><a href="/support/#servers">A folder of files</a></div>
+      <div><b>Portage</b><a href="/support/">Support</a><a href="/privacy/">Privacy policy</a><a href="mailto:hi@rikard.dev">hi@rikard.dev</a></div>
+      <div><b>Follow</b><a href="https://x.com/PortageApp">X</a><a href="https://bsky.app/profile/portageapp.bsky.social">Bluesky</a><a href="https://www.youtube.com/@PortagePlayer">YouTube</a></div>
+    </div>
+    <p class="legal">Apple, the Apple logo, AirPlay, Apple TV, iPhone, iPad and Mac are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Plex, Emby, Jellyfin, Chromecast, Dolby, DTS and the other product names on this site belong to their owners. Portage isn’t made by, affiliated with or endorsed by any of them. Tears of Steel (<a href="https://mango.blender.org">mango.blender.org</a>) and Sintel (<a href="https://durian.blender.org">durian.blender.org</a>) © Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. © 2026 Rikard Wissing</p>
+  </div>
+</footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "07b00b8b3ce5484c8563552a462431bc"}'></script>
+</body>
+</html>

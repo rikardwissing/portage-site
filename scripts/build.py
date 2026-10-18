@@ -40,7 +40,7 @@ def fill(template, values):
 
 
 def app_link(path):
-    campaign = "site-" + (path.strip("/") or "home")
+    campaign = "site-" + (path.strip("/").replace("/", "-") or "home")
     token = f"pt={PROVIDER_TOKEN}&" if PROVIDER_TOKEN else ""
     return f"https://apps.apple.com/app/apple-store/id{APP_ID}?{token}ct={campaign}&mt=8"
 
@@ -60,9 +60,11 @@ def build():
     get_block = (SRC / "get.html").read_text().rstrip("\n")
     badge = (SRC / "badge.html").read_text().strip()
     sitemap = []
-    for file in sorted((SRC / "pages").glob("*.html"), key=lambda f: (f.stem != "index", f.stem)):
+    pages = SRC / "pages"
+    for file in sorted(pages.rglob("*.html"), key=lambda f: (f.stem != "index", str(f))):
         fields, html = read_page(file)
-        path = "/" if file.stem == "index" else f"/{file.stem}/"
+        name = file.relative_to(pages).with_suffix("").as_posix()
+        path = "/" if name == "index" else f"/{name}/"
         head = "".join(JSONLD.findall(html))
         content = JSONLD.sub("", html).replace("{{get}}", get_block)
         og = ""
@@ -79,7 +81,7 @@ def build():
             "content": content.rstrip("\n"),
         })
         page = page.replace("{{badge}}", badge.replace("{{app_link}}", app_link(path)))
-        out_file(path).parent.mkdir(exist_ok=True)
+        out_file(path).parent.mkdir(parents=True, exist_ok=True)
         out_file(path).write_text(page)
         sitemap.append(f"  <url><loc>{SITE}{path}</loc><lastmod>{fields['lastmod']}</lastmod></url>\n")
     for page, target in REDIRECTS.items():

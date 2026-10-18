@@ -5,7 +5,8 @@ iPhone, iPad and Mac. Plain HTML and CSS, served by GitHub Pages from `main`.
 
 - `src/` — the source of every page. `layout.html` holds the head, nav and
   footer, `get.html` the closing Get Portage block, `badge.html` the App Store
-  badge, and `pages/` one file per page: a few `key: value` fields on top
+  badge, and `pages/` one file per page, built at its own path
+  (`pages/guides/hotel-tv.html` → `/guides/hotel-tv/`): a few `key: value` fields on top
   (title, description, og_title, og_description, body, lastmod), a blank line,
   then the page's HTML. `{{badge}}` and `{{get}}` in a page pull in the shared
   pieces, and JSON-LD blocks in a page go into its head

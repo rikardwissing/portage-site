@@ -1,0 +1,96 @@
+title: Cast Jellyfin to a Chromecast from an iPhone — Portage
+description: Cast your Jellyfin library from an iPhone to a Chromecast or Google TV with Portage. The original file plays when the Chromecast can play it, MKVs included, and your iPhone is the remote.
+og_title: Jellyfin to a Chromecast from an iPhone
+og_description: Add your Jellyfin server to Portage, tap the cast button and pick the Chromecast. Your iPhone is the remote.
+lastmod: 2026-10-18
+
+<header class="hero guide">
+  <div class="ribbon" data-ribbon></div>
+  <div class="wrap">
+    <p class="crumb"><a href="/">Portage</a><span>/</span><span>Guides</span><span>/</span><span>Jellyfin to a Chromecast</span></p>
+    <h1>Jellyfin to a Chromecast <span class="glow">from an iPhone.</span></h1>
+    <p class="lede">Portage is a Jellyfin client for iPhone that casts to a Chromecast or a Google TV. Add your server once, tap the cast button, and your iPhone is the remote.</p>
+    {{badge}}
+  </div>
+</header>
+
+<main>
+  <section class="guide-body">
+    <div class="wrap">
+      <ol class="guide-steps">
+        <li id="step-1">
+          <span class="n">Step 1</span>
+          <div class="mini"><div class="mock-menu" role="img" aria-label="Portage's Add a source menu, with Add a Jellyfin server highlighted"><small>Add a source</small><span>Add a Plex account…</span><span>Add an Emby Connect account…</span><span>Add an Emby server…</span><span class="on">Add a Jellyfin server…</span></div></div>
+          <h3>Add your Jellyfin server</h3>
+          <p>In Portage, pick <b>Add a Jellyfin server…</b>, type its address and sign in with your Jellyfin user.</p>
+        </li>
+        <li id="step-2">
+          <span class="n">Step 2</span>
+          <div class="mini"><img src="/img/sintel-iphone.webp" alt="Portage on an iPhone held sideways, playing Sintel, with the cast menu listing two TVs, a web browser and AirPlay" width="1800" height="882" loading="lazy"></div>
+          <h3>Tap the cast button</h3>
+          <p>Play a film or an episode, tap the cast button and pick your Chromecast. It shows up on its own when your iPhone is on the same Wi-Fi. Allow Local Network the first time Portage asks.</p>
+        </li>
+        <li id="step-3">
+          <span class="n">Step 3</span>
+          <div class="mini"><div class="mock-tv"><img src="/img/sintel-poster.webp" alt="Sintel playing on a TV through a Chromecast" width="1152" height="491" loading="lazy"><span class="mock-badge">Chromecast</span></div></div>
+          <h3>Watch on the TV</h3>
+          <p>Pause, seek and switch audio or subtitles from your iPhone. Tracks inside the file switch without restarting the film.</p>
+        </li>
+      </ol>
+
+      <div class="callout"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.8l5 3.2-5 3.2z"/></svg><p><b>The original file, even an MKV.</b> When the Chromecast can play the file, Portage sends it as it is, so your Jellyfin server has nothing to transcode.</p></div>
+
+      <div class="need">
+        <div>
+          <h3>What you need</h3>
+          <ul class="ticks">
+            <li>An iPhone or iPad with Portage, on iOS 26 or later</li>
+            <li>A Chromecast or a TV with Google TV, on the same Wi-Fi as your iPhone</li>
+            <li>A Jellyfin server you can sign in to</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Other ways, and what they cost</h3>
+          <ul class="ticks other">
+            <li><b>Jellyfin’s app on a Google TV.</b> Needs the app installed on the TV and your Jellyfin user signed in there. The app is free.</li>
+            <li><b>Jellyfin in Chrome on a computer.</b> Needs a computer with Chrome on the same Wi-Fi, where Jellyfin’s web player casts to the Chromecast. Free.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guide-sec">
+        <h2>When the Chromecast can’t play a file</h2>
+        <p>Older Chromecasts don’t play HEVC, for example. Portage lets the Chromecast try the original first. If it can’t play it, Portage says so and can make a copy that will, on your iPhone, with the preset for your Chromecast. Nothing is uploaded, and your server does no extra work.</p>
+      </div>
+
+      <div class="head guide-head"><h2>Questions</h2></div>
+      <div class="questions">
+        <details open>
+          <summary>Does my Jellyfin server have to transcode?</summary>
+          <p>Not when the Chromecast plays the original file. Portage sends it as it is whenever it can, and any copy for the TV is made on your iPhone, not on the server.</p>
+        </details>
+        <details>
+          <summary>Can I cast a film I’ve downloaded?</summary>
+          <p>Yes. It plays from your iPhone to the Chromecast over your Wi-Fi.</p>
+        </details>
+        <details>
+          <summary>What if my iPhone loses Wi-Fi?</summary>
+          <p>The TV keeps playing, and Portage reconnects to it, showing “Reconnecting to…” until it’s back.</p>
+        </details>
+        <details>
+          <summary>Is Portage made by Jellyfin?</summary>
+          <p>No. Portage works with your Jellyfin server, but Jellyfin doesn’t make or endorse it.</p>
+        </details>
+      </div>
+
+      <div class="related-guides">
+        <a href="/guides/plex-chromecast-iphone/">Plex to a Chromecast or smart TV<span>From an iPhone</span></a>
+        <a href="/guides/hotel-tv/">A hotel or Airbnb TV<span>Through its web browser</span></a>
+        <a href="/guides/offline-flight/">Your library on a flight<span>Downloads in airplane mode</span></a>
+        <a href="/jellyfin/">A Jellyfin client<span>Portage on iPhone, iPad and Mac</span></a>
+      </div>
+    </div>
+  </section>
+
+{{get}}
+</main>
