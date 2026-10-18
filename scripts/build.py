@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 SITE = "https://portage.rikard.dev"
 APP_ID = "6816252844"
-PROVIDER_TOKEN = ""
+PROVIDER_TOKEN = "119545920"
 MACOS = "macOS 12"
 REDIRECTS = {"/tesla/": "/cast-to-car/#tesla"}
 JSONLD = re.compile(r'<script type="application/ld\+json">\n.*?\n</script>\n', re.S)
