@@ -26,7 +26,7 @@ iPhone, iPad and Mac. Plain HTML and CSS, served by GitHub Pages from `main`.
   pass paths like `/xbox/`. The key file at the root must stay
 - `img/` — brand assets and screenshots, made from the app repo's
   `appstore/raw/` captures: device shots are composited into Apple's Silver
-  frames (`appstore/frames/`, never published bare), the ribbon loop and the
-  tour come from the app repo's composer and app preview
+  frames (`appstore/frames/`, never published bare), the ribbon loop comes
+  from the app repo's composer, and the tour is the promo video
 
 App: https://apps.apple.com/app/id6816252844

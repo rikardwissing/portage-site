@@ -624,18 +624,9 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 .tour-dialog { border: 0; padding: 0; background: none; overflow: visible; color: var(--text); outline: none; }
 .tour-dialog::backdrop { background: rgba(6,7,26,.86); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 .tour-dialog[open] { display: grid; gap: 14px; justify-items: center; }
-.tour-bar { width: 100%; display: flex; justify-content: center; position: relative; padding: 0 52px; }
-.tour-tabs { display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--line); }
-.tour-tabs button { all: unset; cursor: pointer; padding: 8px 16px; border-radius: 999px; font: 600 15px/1 var(--rounded); color: var(--muted); border: 1px solid transparent; transition: color .2s, background .2s, border-color .2s; }
-.tour-tabs button:hover { color: var(--text); }
-.tour-tabs button[aria-selected="true"] { color: #fff; background: rgba(25,216,230,.14); border-color: rgba(25,216,230,.5); }
-.tour-tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.tour-panel[hidden] { display: none; }
-.tour-dialog .device { width: min(330px, 76vw, calc((100vh - 140px) * 760 / 1551)); }
-.tour-flat { display: block; height: auto; border-radius: 14px; background: #0B0D22; }
-.tour-flat.mac { width: min(1120px, 92vw, calc((100vh - 140px) * 16 / 9)); aspect-ratio: 16 / 9; }
-.tour-flat.ipad { width: min(900px, 92vw, calc((100vh - 140px) * 4 / 3)); aspect-ratio: 4 / 3; }
-.tour-close { all: unset; cursor: pointer; position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 26px; line-height: 1; color: #fff; background: rgba(255,255,255,.12); }
+.tour-bar { width: 100%; display: flex; justify-content: flex-end; }
+.tour-video { display: block; width: min(1120px, 92vw, calc((100vh - 120px) * 16 / 9)); height: auto; aspect-ratio: 16 / 9; border-radius: 14px; background: #0B0D22; }
+.tour-close { all: unset; cursor: pointer; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 26px; line-height: 1; color: #fff; background: rgba(255,255,255,.12); }
 .tour-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 @media (max-width: 860px) {
