@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cast Plex, Emby or Jellyfin to your car's browser — Portage</title>
-<meta name="description" content="Watch Plex, Emby or Jellyfin on your car's screen: open tv.rikard.dev in the car's browser, enter the code in Portage, and use your phone as the remote.">
+<title>Cast Plex, Emby or Jellyfin to your car or Tesla — Portage</title>
+<meta name="description" content="Watch Plex, Emby or Jellyfin on your car's screen, a Tesla's too: open tv.rikard.dev in the car's browser, enter the code in Portage, and use your phone as the remote.">
 <link rel="canonical" href="https://portage.rikard.dev/cast-to-car/">
-<meta name="apple-itunes-app" content="app-id=6816252844">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0B0D22">
+<meta name="apple-itunes-app" content="app-id=6816252844">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Portage">
-<meta property="og:title" content="Cast Plex, Emby or Jellyfin to your car's browser">
+<meta property="og:title" content="Cast Plex, Emby or Jellyfin to your car or Tesla">
 <meta property="og:description" content="Open tv.rikard.dev in the car, type the code into Portage, and your phone is the remote.">
 <meta property="og:image" content="https://portage.rikard.dev/img/og.png">
 <meta property="og:url" content="https://portage.rikard.dev/cast-to-car/">
@@ -20,14 +20,14 @@
 <link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="icon" href="/img/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/site.css?v=6">
+<link rel="stylesheet" href="/site.css?v=7">
 <script src="/ribbon.js?v=2" defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
  "@type": "HowTo",
  "name": "How to cast Plex, Emby or Jellyfin to your car's browser",
- "description": "Play your Plex, Emby or Jellyfin library on a car's built-in browser with Portage and tv.rikard.dev, using your phone as the remote.",
+ "description": "Play your Plex, Emby or Jellyfin library on a car's built-in browser, a Tesla's too, with Portage and tv.rikard.dev, using your phone as the remote.",
  "image": "https://portage.rikard.dev/img/cast-iphone.webp",
  "totalTime": "PT2M",
  "tool": [
@@ -72,46 +72,6 @@
  ]
 }
 </script>
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-  {
-   "@type": "Question",
-   "name": "Can I watch while driving?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "That's up to the car. Most cars only play video in the browser while parked, so this is for charging stops, waiting and passengers in a parked car."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Does the video go through your servers?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "No. tv.rikard.dev and its pairing service only pass connection details between your device and the browser. The video comes from your media server or your phone, straight to the car, and nothing is kept after the session."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Which cars work?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Any car with a web browser that plays video, such as a Tesla, or a car with the Vivaldi browser: Polestar, Renault and some Mercedes-Benz and Audi models. Tried yours? Email hi@rikard.dev, especially if something didn't work."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Is this only for cars?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "No. The same page works in any browser: a laptop, a smart TV's browser, an Xbox, a friend's computer in another city. Your phone is the remote wherever it is."
-   }
-  }
- ]
-}
-</script>
 </head>
 <body class="landing-page">
 <div class="ambience" aria-hidden="true"></div>
@@ -120,10 +80,11 @@
   <div class="wrap">
     <a class="brand" href="/"><img src="/img/glyph.png" alt="" width="28" height="28">Portage</a>
     <div class="links">
-      <a href="/plex/">Plex</a>
-      <a href="/emby/">Emby</a>
-      <a href="/jellyfin/">Jellyfin</a>
-      <a href="/cast-to-car/" aria-current="page">Cast to a car</a>
+      <a href="/#stream">Stream</a>
+      <a href="/#download">Download</a>
+      <a href="/#cast">Cast</a>
+      <a href="/#convert">Convert</a>
+      <a href="/#tour">Tour</a>
       <a href="/support/">Support</a>
       <a class="get" href="#get" data-ribbon>Get the app</a>
     </div>
@@ -136,11 +97,8 @@
     <div class="chips"><span class="chip plex">Plex</span><span class="chip emby">Emby</span><span class="chip jellyfin">Jellyfin</span></div>
     <h1>Cast Plex, Emby or Jellyfin to <span class="glow">your car's browser.</span></h1>
     <p class="lede">If your car has a web browser, it can be a screen for your media server. Open tv.rikard.dev in the car, type the code it shows into Portage, and your phone is the remote.</p>
-    <div class="cta">
-        <a class="badge" href="https://apps.apple.com/app/id6816252844"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
-        <a class="badge" href="https://apps.apple.com/app/id6816252844?platform=mac"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>Mac App Store</b></span></a>
-      </div>
-    <p class="facts">Free app · iOS 26 or macOS 12 and later · Not affiliated with any car maker, Plex, Emby or Jellyfin</p>
+    <div class="cta"><a class="badge" href="https://apps.apple.com/app/apple-store/id6816252844?ct=site-cast-to-car&mt=8"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>App Store</b></span></a><span class="platforms">For iPhone, iPad and Mac</span></div>
+    <p class="facts">iOS 26 or macOS 12 and later · Not affiliated with any car maker, Plex, Emby or Jellyfin</p>
   </div>
   <div class="car-stage">
     <div class="carscreen" role="img" aria-label="tv.rikard.dev open in a car's browser: Ready to cast, with the code K7M2QX and Enter this code in Portage">
@@ -186,9 +144,24 @@
         <p class="lede">Any car whose browser plays video can be the screen. These are cars that have one.</p>
       </div>
       <div class="cards">
-        <a class="card violet" href="/tesla/"><h3>Tesla</h3><p>The built-in browser plays video in Park. The Tesla page has the steps and what the car needs.</p></a>
+        <a class="card violet" href="#tesla"><h3>Tesla</h3><p>The built-in browser plays video in Park. The Tesla section below has the steps and what the car needs.</p></a>
         <div class="card blue"><h3>Polestar, Renault, Mercedes-Benz, Audi</h3><p>Vivaldi, the browser for cars with Google built-in, is in Polestar and Renault cars and some Mercedes-Benz and Audi models. It plays video while parked.</p></div>
         <div class="card "><h3>Something else?</h3><p>If its browser plays video, it's worth a try. Tell <a href="mailto:hi@rikard.dev">hi@rikard.dev</a> how it went.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-violet" id="tesla">
+    <div class="wrap">
+      <div class="head center">
+        <p class="eyebrow">Tesla</p>
+        <h2>What your <span class="glow">Tesla needs.</span></h2>
+        <p class="lede">Shift into Park, open <b>Browser</b> from the app launcher and go to tv.rikard.dev. Tesla's browser is built on Chromium, the same engine as Chrome. These are the car's own rules.</p>
+      </div>
+      <div class="cards">
+        <div class="card violet"><h3>Park</h3><p>Tesla's browser plays video only in Park. Shift out of Park and it pauses.</p></div>
+        <div class="card blue"><h3>A connection</h3><p>On Wi-Fi, at home or on your phone's hotspot, the browser works on any plan. Over the car's own LTE it needs Premium Connectivity.</p></div>
+        <div class="card "><h3>Any Tesla since 2018</h3><p>Every Model 3, Model Y and Cybertruck, and Model S and X built from March 2018. An older S or X needs the MCU2 upgrade, because the original computer's browser doesn't play video.</p></div>
       </div>
     </div>
   </section>
@@ -227,7 +200,7 @@
       <h2>Questions</h2>
       <details open>
         <summary>Can I watch while driving?</summary>
-        <p>That's up to the car. Most cars only play video in the browser while parked, so this is for charging stops, waiting and passengers in a parked car.</p>
+        <p>That's up to the car. Most cars only play video in the browser while parked, and a Tesla pauses it when you shift out of Park. So this is for charging stops, waiting and passengers in a parked car.</p>
       </details>
       <details>
         <summary>Does the video go through your servers?</summary>
@@ -235,11 +208,23 @@
       </details>
       <details>
         <summary>Which cars work?</summary>
-        <p>Any car with a web browser that plays video, such as a <a href="/tesla/">Tesla</a>, or a car with the Vivaldi browser: Polestar, Renault and some Mercedes-Benz and Audi models. Tried yours? Email <a href="mailto:hi@rikard.dev">hi@rikard.dev</a>, especially if something didn't work.</p>
+        <p>Any car with a web browser that plays video, such as a <a href="#tesla">Tesla</a>, or a car with the Vivaldi browser: Polestar, Renault and some Mercedes-Benz and Audi models. Tried yours? Email <a href="mailto:hi@rikard.dev">hi@rikard.dev</a>, especially if something didn't work.</p>
       </details>
       <details>
         <summary>Is this only for cars?</summary>
         <p>No. The same page works in any browser: a laptop, a smart TV's browser, an <a href="/xbox/">Xbox</a>, a friend's computer in another city. Your phone is the remote wherever it is.</p>
+      </details>
+      <details>
+        <summary>Do I need Premium Connectivity in a Tesla?</summary>
+        <p>Only to use the browser over the car's own LTE. On Wi-Fi, at home or on your phone's hotspot, you don't.</p>
+      </details>
+      <details>
+        <summary>Does the video fill a Tesla's screen?</summary>
+        <p>Recent Tesla software has a full-screen button in the browser. Tap it to give the video the whole touchscreen.</p>
+      </details>
+      <details>
+        <summary>Is there a Portage app for the Tesla?</summary>
+        <p>No, and none is needed. The Tesla's own browser opens tv.rikard.dev, and Portage on your iPhone, iPad or Mac does the rest. Portage is not made by or affiliated with Tesla.</p>
       </details>
     </div>
   </section>
@@ -248,10 +233,9 @@
     <div class="wrap">
       <h2>More about <span class="glow">Portage.</span></h2>
       <div class="cards">
-        <a class="card plex" href="/plex/"><h3>Plex player and downloader</h3><p>Download from your Plex server with no Plex Pass, stream the original file, cast it anywhere.</p></a>
-        <a class="card emby" href="/emby/"><h3>Emby player</h3><p>Sign in with Emby Connect or a server address, then stream, download and cast.</p></a>
-        <a class="card jellyfin" href="/jellyfin/"><h3>Jellyfin app</h3><p>Your Jellyfin server on iPhone, iPad and Mac, online and offline.</p></a>
-        <a class="card violet" href="/tesla/"><h3>Watch in a Tesla</h3><p>Plex, Emby or Jellyfin on the Tesla's touchscreen while you're parked.</p></a>
+        <a class="card plex" href="/plex/"><h3>Works with Plex</h3><p>Download from your Plex server with no Plex Pass, stream the original file, cast it anywhere.</p></a>
+        <a class="card emby" href="/emby/"><h3>Works with Emby</h3><p>Sign in with Emby Connect or a server address, then stream, download and cast.</p></a>
+        <a class="card jellyfin" href="/jellyfin/"><h3>A Jellyfin client</h3><p>Your Jellyfin server on iPhone, iPad and Mac, online and offline.</p></a>
         <a class="card blue" href="/xbox/"><h3>Cast to an Xbox</h3><p>Your server on the TV through the Xbox's browser, with your phone as the remote.</p></a>
       </div>
     </div>
@@ -262,30 +246,20 @@
     <div class="wrap">
       <img class="mark" src="/img/glyph.png" alt="" width="72" height="72">
       <h2>Get <span class="glow">Portage.</span></h2>
-      <p class="lede">iPhone, iPad and Mac. Free.</p>
-      <div class="cta">
-        <a class="badge" href="https://apps.apple.com/app/id6816252844"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
-        <a class="badge" href="https://apps.apple.com/app/id6816252844?platform=mac"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>Mac App Store</b></span></a>
-      </div>
+      <div class="cta"><a class="badge" href="https://apps.apple.com/app/apple-store/id6816252844?ct=site-cast-to-car&mt=8"><svg viewBox="0 0 17 20" aria-hidden="true"><path d="M14.1 10.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9C3.6 4.7 2 5.8 1.1 7.4c-1.9 3.3-.5 8.1 1.4 10.8.9 1.3 2 2.8 3.4 2.7 1.4-.1 1.9-.9 3.5-.9s2.1.9 3.5.9c1.5 0 2.4-1.3 3.3-2.6 1-1.5 1.5-3 1.5-3.1-.1 0-2.9-1.1-2.6-4.6zM11.6 3c.7-.9 1.2-2.1 1.1-3.3-1 0-2.3.7-3 1.6-.7.8-1.2 2-1.1 3.2 1.1.1 2.3-.6 3-1.5z"/></svg><span><small>Download on the</small><b>App Store</b></span></a><span class="platforms">For iPhone, iPad and Mac</span></div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="pages">
-      <a href="/plex/">Plex player and downloader</a>
-      <a href="/emby/">Emby player</a>
-      <a href="/jellyfin/">Jellyfin app</a>
-      <a href="/cast-to-car/">Cast to your car</a>
-      <a href="/tesla/">Watch in a Tesla</a>
-      <a href="/xbox/">Cast to an Xbox</a>
+    <div class="columns">
+      <div><b>Guides</b><a href="/cast-to-car/" aria-current="page">Watch in your car</a><a href="/xbox/">Cast to an Xbox</a></div>
+      <div><b>Works with</b><a href="/plex/">Plex</a><a href="/emby/">Emby</a><a href="/jellyfin/">Jellyfin</a><a href="/support/#servers">A folder of files</a></div>
+      <div><b>Portage</b><a href="/support/">Support</a><a href="/privacy/">Privacy policy</a><a href="mailto:hi@rikard.dev">hi@rikard.dev</a></div>
+      <div><b>Follow</b><a href="https://x.com/PortageApp">X</a><a href="https://bsky.app/profile/portageapp.bsky.social">Bluesky</a><a href="https://www.youtube.com/@PortagePlayer">YouTube</a></div>
     </div>
-    <a href="/support/">Support</a>
-    <a href="/privacy/">Privacy policy</a>
-    <a href="mailto:hi@rikard.dev">hi@rikard.dev</a>
-    <span style="margin-left:auto">© 2026 Rikard Wissing</span>
-    <p class="legal">Plex, Emby, Jellyfin, Chromecast, Google TV, AirPlay, Apple TV, Tesla, Xbox and the other product names on this site are trademarks of their respective owners. Portage is an independent app and is not affiliated with or endorsed by any of them.</p>
+    <p class="legal">Apple, the Apple logo, AirPlay, Apple TV, iPhone, iPad and Mac are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Plex, Emby, Jellyfin, Chromecast and the other product names on this site belong to their owners. Portage isn’t made by, affiliated with or endorsed by any of them. © 2026 Rikard Wissing</p>
   </div>
 </footer>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "07b00b8b3ce5484c8563552a462431bc"}'></script>

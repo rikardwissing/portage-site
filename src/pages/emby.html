@@ -1,0 +1,185 @@
+title: Portage — a player that works with Emby, for iPhone, iPad and Mac
+description: Portage works with Emby on iPhone, iPad and Mac. Sign in with Emby Connect or a server address, stream the original file, download for offline and cast.
+og_title: Portage — works with Emby
+og_description: Stream, download for offline and cast from your Emby server.
+body: landing-page
+lastmod: 2026-10-18
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "Portage: Media Server Player",
+ "alternateName": "Portage",
+ "description": "A player that works with Emby, for iPhone, iPad and Mac. Sign in with Emby Connect or a server address, stream the original file, download for offline viewing, cast and convert.",
+ "applicationCategory": "MultimediaApplication",
+ "operatingSystem": "iOS 26, iPadOS 26, macOS 12 or later",
+ "url": "https://portage.rikard.dev/",
+ "downloadUrl": "https://apps.apple.com/app/id6816252844",
+ "installUrl": "https://apps.apple.com/app/id6816252844",
+ "image": "https://portage.rikard.dev/img/og.png",
+ "featureList": [
+  "Emby Connect sign-in, or a server by address",
+  "Direct play of the original file",
+  "Offline downloads: original, server transcoded, or converted on device",
+  "Casting to Chromecast, Google TV, DLNA, AirPlay and web browsers",
+  "On-device conversion with presets for Apple TV, Chromecast and iPhone",
+  "Watch progress saved to the server"
+ ],
+ "author": {
+  "@type": "Person",
+  "name": "Rikard Wissing"
+ }
+}
+</script>
+<header class="hero landing">
+  <div class="ribbon" data-ribbon></div>
+  <div class="wrap">
+    <div class="chips"><span class="chip emby">Emby</span></div>
+    <h1>Portage <span class="glow">works with Emby.</span></h1>
+    <p class="lede">A player for iPhone, iPad and Mac. Play your Emby server's films and shows at full quality, download them for offline, and cast them to the TV or any browser.</p>
+    {{badge}}
+    <p class="facts">iOS 26 or macOS 12 and later · Not made by or affiliated with Emby</p>
+  </div>
+  <div class="shot">
+    <div class="two-phones">
+        <div class="device iphone">
+          <img src="/img/hero-iphone.webp" alt="Portage on iPhone: Continue Watching and a server's library" width="760" height="1551">
+        </div>
+        <div class="device iphone">
+          <img src="/img/download-versions.webp" alt="A film page on iPhone listing the original file and a copy made for Chromecast with Google TV" width="760" height="1551">
+          <p class="label">A copy made for your TV</p>
+        </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="chapter tint-blue" id="sign-in">
+    <div class="wrap">
+      <div class="head center">
+        <p class="eyebrow">Sign in</p>
+        <h2>Two ways <span class="glow">in.</span></h2>
+        <p class="lede">Use whichever you already have. Either way, where you stop is saved on the server, so Emby on your TV carries on from there.</p>
+      </div>
+      <div class="cards">
+        <div class="card emby"><h3>Emby Connect</h3><p>Pick <b>Add an Emby Connect account…</b> and Portage finds the servers your account can reach. A server shared with you later shows up on its own.</p></div>
+        <div class="card blue"><h3>Server address</h3><p>Pick <b>Add an Emby server…</b>, type an address like 192.168.1.100:8096 or https://media.example.com, and sign in with your Emby user.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-cyan" id="stream">
+    <div class="wrap split flip">
+      <div class="head">
+        <p class="eyebrow">Stream</p>
+        <h2>The original file, <span class="glow">whenever it plays.</span></h2>
+        <p class="lede">Portage asks Emby for the file itself when your device can play it, so the server has nothing to transcode. When it can't, you pick the size before it starts.</p>
+        <ul class="points">
+          <li>Every audio and subtitle track, switchable while it plays</li>
+          <li>Continue Watching and search across every server you add</li>
+          <li>Picture in Picture, and pinch to fill the screen</li>
+        </ul>
+      </div>
+      <div class="backlit one-phone">
+        <div class="device iphone">
+          <img src="/img/stream-sheet.webp" alt="The Stream sheet on iPhone over Sprite Fright: Play the original file is on, with Video format, Resolution and Audio format below" width="760" height="1551" loading="lazy">
+          <p class="label">The original file,<br>or a size you pick</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-violet" id="download">
+    <div class="wrap split">
+      <div class="head">
+        <p class="eyebrow">Download</p>
+        <h2>Emby, <span class="glow">offline.</span></h2>
+        <p class="lede">Save a film or a whole season as a real file. On iPhone and iPad it's in the Files app, on the Mac in a folder you pick.</p>
+        <ul class="points">
+          <li><b>Download Original:</b> the untouched file, every track inside it</li>
+          <li><b>Download Transcoded:</b> Emby makes a smaller copy at the quality you pick</li>
+          <li><b>Download &amp; Transcode:</b> converted on your device for the screen you'll watch on</li>
+          <li>Downloads carry on in the background and resume after interruptions</li>
+        </ul>
+      </div>
+      <div class="backlit one-phone">
+        <div class="device iphone">
+          <img src="/img/download-menu.webp" alt="A film page on iPhone with the download menu open: Download Original, Download Transcoded, Download and Transcode" width="760" height="1551" loading="lazy">
+          <p class="label">The untouched original</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-cyan" id="cast">
+    <div class="wrap split flip">
+      <div class="head">
+        <p class="eyebrow">Cast</p>
+        <h2>Emby on <span class="glow">the TV.</span></h2>
+        <p class="lede">Chromecast, Google TV and DLNA TVs show up on their own, with AirPlay in the same menu. Pause, seek and switch tracks from your phone.</p>
+        <ul class="points">
+          <li>Casts the original file when the TV can play it, even an MKV</li>
+          <li><a href="/cast-to-car/">Any browser works, even your car's</a>: open tv.rikard.dev and type the code it shows</li>
+        </ul>
+      </div>
+      <div class="backlit">
+        <div class="device iphone-landscape">
+          <img src="/img/cast-iphone.webp" alt="Portage on an iPhone held sideways, playing Big Buck Bunny, with the cast menu listing two TVs, a web browser and AirPlay" width="1800" height="882" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter tint-blue" id="convert">
+    <div class="wrap split">
+      <div class="head">
+        <p class="eyebrow">Convert</p>
+        <h2>When the TV <span class="glow">says no.</span></h2>
+        <p class="lede">Some TVs can't play some files. Portage converts them on your iPhone, iPad or Mac, with presets for Apple TV, Chromecast and iPhone. Pause a conversion or quit the app, and it carries on later where it stopped.</p>
+        
+      </div>
+      <div class="backlit one-phone">
+        <div class="device iphone">
+          <img src="/img/convert-queue.webp" alt="The Conversions tab on iPhone with one conversion paused partway and two finished" width="760" height="1551" loading="lazy">
+          <p class="label">Resumable</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <h2>Questions</h2>
+      <details open>
+        <summary>Is Portage the official Emby app?</summary>
+        <p>No. Portage is an independent app, not made by or affiliated with Emby. It signs in to your server with your own Emby user, directly or through Emby Connect.</p>
+      </details>
+      <details>
+        <summary>Do I need Emby Connect?</summary>
+        <p>No. Add your server by its address if you'd rather. Emby Connect is there for the servers your Connect account reaches, including ones shared with you later.</p>
+      </details>
+      <details>
+        <summary>Does it work away from home?</summary>
+        <p>If your Emby server is reachable from outside your network, yes, the same way the official apps reach it. Anything you've downloaded plays with no connection at all.</p>
+      </details>
+      <details>
+        <summary>What do I need?</summary>
+        <p>An Emby server you can sign in to, and an iPhone or iPad on iOS 26 or a Mac on macOS 12 or later. Portage has no account of its own and no ads.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="related">
+    <div class="wrap">
+      <h2>More about <span class="glow">Portage.</span></h2>
+      <div class="cards">
+        <a class="card plex" href="/plex/"><h3>Works with Plex</h3><p>Download from your Plex server with no Plex Pass, stream the original file, cast it anywhere.</p></a>
+        <a class="card jellyfin" href="/jellyfin/"><h3>A Jellyfin client</h3><p>Your Jellyfin server on iPhone, iPad and Mac, online and offline.</p></a>
+        <a class="card browser" href="/cast-to-car/"><h3>Cast to your car</h3><p>Your server on the car's screen, with a code and your phone as the remote.</p></a>
+        <a class="card blue" href="/xbox/"><h3>Cast to an Xbox</h3><p>Your server on the TV through the Xbox's browser, with your phone as the remote.</p></a>
+      </div>
+    </div>
+  </section>
+
+{{get}}
+</main>

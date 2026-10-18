@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://portage.rikard.dev/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/plex/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/emby/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/jellyfin/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/cast-to-car/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/tesla/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/xbox/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/support/</loc><lastmod>2026-10-15</lastmod></url>
-  <url><loc>https://portage.rikard.dev/privacy/</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://portage.rikard.dev/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://portage.rikard.dev/cast-to-car/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://portage.rikard.dev/emby/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://portage.rikard.dev/jellyfin/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://portage.rikard.dev/plex/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://portage.rikard.dev/privacy/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://portage.rikard.dev/support/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://portage.rikard.dev/xbox/</loc><lastmod>2026-10-18</lastmod></url>
 </urlset>
