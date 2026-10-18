@@ -755,3 +755,15 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
   .press dd { margin-bottom: 10px; }
   .releases time { margin-left: 0; flex-basis: 100%; }
 }
+
+.specs { margin: 56px auto 0; max-width: 940px; padding-top: 28px; border-top: 1px solid var(--line); }
+.specs h3 { font-size: 20px; margin-bottom: 14px; }
+.specs dl { margin: 0; display: grid; grid-template-columns: 150px minmax(0, 1fr); }
+.specs dt, .specs dd { margin: 0; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.specs dt { color: var(--muted); font-weight: 600; }
+.specs dd { color: #C9CEE6; }
+@media (max-width: 640px) {
+  .specs dl { grid-template-columns: minmax(0, 1fr); }
+  .specs dt { border-bottom: 0; padding-bottom: 2px; }
+  .specs dd { padding-top: 0; }
+}
