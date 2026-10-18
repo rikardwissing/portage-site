@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Portage">
 <meta property="og:title" content="Portage — your films on any TV">
-<meta property="og:description" content="Your own Plex, Emby or Jellyfin library, cast in full quality from your iPhone or Mac to whatever screen is in the room.">
+<meta property="og:description" content="Your own Plex, Emby or Jellyfin library, cast in full quality from your iPhone, iPad or Mac to whatever screen is in the room.">
 <meta property="og:image" content="https://portage.rikard.dev/img/og.png">
 <meta property="og:url" content="https://portage.rikard.dev/">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
 <link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="icon" href="/img/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/site.css?v=19">
+<link rel="stylesheet" href="/site.css?v=20">
 <script src="/ribbon.js?v=2" defer></script>
 <script type="application/ld+json">
 {
@@ -88,7 +88,7 @@
           <span class="chip plex on" data-server="Plex">Plex</span><span class="chip emby" data-server="Emby">Emby</span><span class="chip jellyfin" data-server="Jellyfin">Jellyfin</span>
         </div>
         <h1>Your films on <span class="glow">any TV.</span></h1>
-        <p class="lede">Your own Plex, Emby or Jellyfin library, cast in full quality from your iPhone or Mac to whatever screen is in the room.</p>
+        <p class="lede">Your own Plex, Emby or Jellyfin library, cast in full quality from your iPhone, iPad or Mac to whatever screen is in the room.</p>
         <div class="home-cta">
           <div class="cta"><a class="badge" href="https://apps.apple.com/app/apple-store/id6816252844?pt=119545920&ct=site-home&mt=8"><img src="/img/app-store-badge.svg" alt="Download on the App Store" width="120" height="40"></a><span class="platforms">For iPhone, iPad and Mac</span></div>
           <a class="tour-button" href="/img/tour.mp4?v=2" data-tour><i aria-hidden="true"></i><span>Watch the tour <small>0:30</small></span></a>
@@ -97,9 +97,9 @@
       </div>
       <div class="scene-col">
         <div class="scene-wrap">
-          <div class="scene s-cast s-play on-phone" id="scene" role="img" aria-label="Portage plays a film on an iPhone or a Mac, then casts it to the TV, which carries on from the same moment">
+          <div class="scene s-cast s-play on-phone" id="scene" role="img" aria-label="Portage plays a film on an iPhone, an iPad or a Mac, then casts it to the TV, which carries on from the same moment">
             <div class="sc-ambi" aria-hidden="true"><img src="/img/tos-poster.webp" alt="" width="1152" height="481"></div>
-            <svg class="sc-beam" viewBox="0 0 840 470" preserveAspectRatio="none" aria-hidden="true"><path class="sc-beam-phone" d="M232 280 C 250 220 300 190 370 180"/><path class="sc-beam-mac" d="M226 220 C 246 170 300 150 370 160"/></svg>
+            <svg class="sc-beam" viewBox="0 0 840 470" preserveAspectRatio="none" aria-hidden="true"><path class="sc-beam-phone" d="M232 280 C 250 220 300 190 370 180"/><path class="sc-beam-mac" d="M226 220 C 246 170 300 150 370 160"/><path class="sc-beam-ipad" d="M224 214 C 244 166 300 150 370 160"/></svg>
             <div class="sc-tv">
               <div class="sc-tv-screen">
                 <img class="sc-tv-poster" src="/img/tos-poster.webp" alt="" width="1152" height="481">
@@ -136,6 +136,29 @@
                 </div>
                 <div class="sc-menu"><small>Devices</small><span><svg><use href="#i-tv"/></svg>Kök Display</span><span class="sc-lr"><svg><use href="#i-tv"/></svg>Living Room TV</span><span class="dim"><svg><use href="#i-search"/></svg>Still searching…</span><hr><span><svg><use href="#i-globe"/></svg>Web browser…</span><span><svg><use href="#i-airplay"/></svg>AirPlay</span></div>
                 <span class="sc-island"></span>
+              </div>
+            </div>
+            <div class="sc-dev sc-ipad">
+              <img class="sc-frame" src="/img/ipad-base.webp" alt="" width="1500" height="1149">
+              <div class="sc-scr sc-scr-ipad">
+                <video class="sc-vid" src="/img/tos-loop.mp4" poster="/img/tos-poster.webp" muted playsinline preload="none"></video>
+                <div class="sc-back"><img src="/img/tos-poster.webp" alt="" width="1152" height="481"></div>
+                <div class="sc-chrome">
+                  <img class="sc-status" src="/img/ipad-status.webp" alt="" width="1376" height="38">
+                  <div class="sc-top">
+                    <span class="sc-chev"></span>
+                    <div class="sc-head"><b class="sc-title">Tears of Steel</b><span class="sc-badges"><em class="pink">MOV</em><em class="teal">H.264 · 720p</em><em class="brown">MP3</em></span></div>
+                  </div>
+                  <div class="sc-tools">
+                    <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12" y="11" width="7" height="6" rx="1"/></svg>
+                    <svg class="sc-cast"><use href="#i-tv"/></svg>
+                  </div>
+                  <div class="sc-mid"><span class="sc-skip">15</span><span class="sc-play"><i></i><svg class="sc-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle class="arc" cx="12" cy="12" r="9.5" pathLength="100"/></svg></span><span class="sc-skip">15</span></div>
+                  <div class="sc-scrub"><i></i><span class="sc-t1">1:09</span><span class="sc-t2">-11:05</span></div>
+                  <div class="sc-opts"><span><svg><use href="#i-gauge"/></svg>1×</span><span><svg><use href="#i-wave"/></svg><span class="sc-audio">English · MP3 · Stereo</span></span><span class="sc-subs dim"><svg><use href="#i-bubble"/></svg><span>Subtitles</span></span></div>
+                  <span class="sc-grab"></span>
+                </div>
+                <div class="sc-menu"><small>Devices</small><span><svg><use href="#i-tv"/></svg>Kök Display</span><span class="sc-lr"><svg><use href="#i-tv"/></svg>Living Room TV</span><span class="dim"><svg><use href="#i-search"/></svg>Still searching…</span><hr><span><svg><use href="#i-globe"/></svg>Web browser…</span><span><svg><use href="#i-airplay"/></svg>AirPlay</span></div>
               </div>
             </div>
             <div class="sc-dev sc-mac">
@@ -403,6 +426,7 @@
       badges: [["blue", "MP4"], ["indigo", "HEVC · 1080p"], ["green", "AAC"]] }
   };
   const SERVERS = ["Plex", "Jellyfin", "Emby"];
+  const DEVICES = { phone: "iPhone", ipad: "iPad", mac: "Mac" };
   const STATES = [["watch", 2600], ["menu", 1300], ["pick", 700], ["conn", 1800], ["cast", 4300], ["end", 800]];
   const tv = scene.querySelector(".sc-tv-video");
   const pause = document.querySelector(".sc-pause");
@@ -413,12 +437,11 @@
   const media = (film) => ["/img/" + film + "-loop.mp4", "/img/" + film + "-poster.webp"];
 
   function setLoop(n) {
-    device = n % 2 ? "mac" : "phone";
-    const film = Math.floor(n / 2) % 2 ? "sintel" : "tos";
-    const F = FILMS[film], server = SERVERS[n % 3], [src, poster] = media(film);
+    device = Object.keys(DEVICES)[n % 3];
+    const film = n % 2 ? "sintel" : "tos";
+    const F = FILMS[film], server = SERVERS[Math.floor(n / 2) % 3], [src, poster] = media(film);
     const dev = scene.querySelector(".sc-" + device);
-    scene.classList.toggle("on-phone", device === "phone");
-    scene.classList.toggle("on-mac", device === "mac");
+    Object.keys(DEVICES).forEach((d) => scene.classList.toggle("on-" + d, d === device));
     if (device === "phone") dev.querySelector(".sc-frame").src = "/img/" + film + "-iphone.webp";
     dev.querySelector(".sc-title").textContent = F.title;
     dev.querySelector(".sc-badges").innerHTML = F.badges.map(([c, t]) => '<em class="' + c + '">' + t + "</em>").join("");
@@ -436,7 +459,7 @@
       if (v.getAttribute("src") !== src) { v.poster = poster; v.src = src; }
     });
     scene.querySelector(".sc-chip-text").textContent = F.title + ", from " + server;
-    steps[0].textContent = device === "phone" ? "Watch on your iPhone" : "Watch on your Mac";
+    steps[0].textContent = "Watch on your " + DEVICES[device];
     document.querySelectorAll(".servers [data-server]").forEach((chip) => {
       chip.classList.toggle("on", chip.dataset.server === server);
     });

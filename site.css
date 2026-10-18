@@ -380,7 +380,7 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 
 .sc-beam { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; pointer-events: none; overflow: visible; }
 .sc-beam path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1 11; vector-effect: non-scaling-stroke; filter: drop-shadow(0 0 5px rgba(25,216,230,.9)); opacity: 0; transition: opacity .5s ease; }
-.scene.s-conn.on-phone .sc-beam-phone, .scene.s-conn.on-mac .sc-beam-mac { opacity: 1; animation: sc-beam .8s linear infinite; }
+.scene.s-conn.on-phone .sc-beam-phone, .scene.s-conn.on-mac .sc-beam-mac, .scene.s-conn.on-ipad .sc-beam-ipad { opacity: 1; animation: sc-beam .8s linear infinite; }
 @keyframes sc-beam { to { stroke-dashoffset: -24; } }
 
 .sc-tv { position: absolute; left: 0; top: 0; width: 100%; z-index: 1; }
@@ -420,7 +420,8 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 .sc-dev { position: absolute; z-index: 3; opacity: 0; pointer-events: none; transition: opacity .7s ease; }
 .sc-phone { left: 3%; top: 61%; width: 44%; }
 .sc-mac { left: 1%; top: 47%; width: 48%; }
-.scene.on-phone .sc-phone, .scene.on-mac .sc-mac { opacity: 1; }
+.sc-ipad { left: 2%; top: 43%; width: 41%; }
+.scene.on-phone .sc-phone, .scene.on-mac .sc-mac, .scene.on-ipad .sc-ipad { opacity: 1; }
 .sc-frame { width: 100%; height: auto; }
 .sc-scr {
   position: absolute; overflow: hidden; container-type: inline-size; background: #000; color: #fff;
@@ -428,6 +429,29 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 }
 .sc-scr-phone { left: 2.222%; top: 5.215%; width: 95.61%; height: 89.8%; border-radius: 6.51% / 14.14%; }
 .sc-scr-mac { left: 9.067%; top: 5.131%; width: 81.867%; height: 77.729%; }
+.sc-scr-ipad { left: 3.202%; top: 4.224%; width: 93.733%; height: 91.774%; border-radius: 1.93% / 2.57%; }
+.sc-scr-ipad .sc-vid { object-fit: contain; }
+.sc-status { position: absolute; left: 0; top: 0; width: 100%; height: auto; }
+.sc-scr-ipad .sc-top { left: 2.44cqw; top: 3cqw; gap: 1.93cqw; }
+.sc-scr-ipad .sc-chev { width: .9cqw; height: .9cqw; border-width: .22cqw; transform: translateY(.59cqw) rotate(45deg); }
+.sc-scr-ipad .sc-head { gap: .18cqw; }
+.sc-scr-ipad .sc-title { font-size: 1.09cqw; }
+.sc-scr-ipad .sc-badges { gap: .44cqw; }
+.sc-scr-ipad .sc-badges em { font-size: .8cqw; padding: .12cqw .45cqw; border-radius: .4cqw; }
+.sc-scr-ipad .sc-tools { right: 1.3cqw; top: 3.12cqw; gap: 1.12cqw; }
+.sc-scr-ipad .sc-tools svg { width: 2.4cqw; height: 2.4cqw; }
+.sc-scr-ipad .sc-mid { top: 50%; gap: 4.34cqw; }
+.sc-scr-ipad .sc-skip { width: 2.4cqw; height: 2.4cqw; font-size: 1cqw; border-width: .2cqw; }
+.sc-scr-ipad .sc-play { width: 5.52cqw; height: 5.52cqw; border-radius: 50%; background: var(--accent); }
+.sc-scr-ipad .sc-play i { width: 1.82cqw; height: 2.03cqw; border-left: .6cqw solid #0B0D22; border-right: .6cqw solid #0B0D22; }
+.sc-scr-ipad .sc-spin { width: 2.3cqw; height: 2.3cqw; }
+.sc-scr-ipad .sc-scrub { left: 1.45%; right: 1.45%; top: 88.4%; height: .22cqw; }
+.sc-scr-ipad .sc-scrub > i::after { width: 1.16cqw; height: 1.16cqw; right: -.58cqw; }
+.sc-scr-ipad .sc-t1, .sc-scr-ipad .sc-t2 { top: 1.3cqw; font-size: .87cqw; }
+.sc-scr-ipad .sc-opts { left: 1.45%; right: 1.45%; top: 92.6%; display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; }
+.sc-scr-ipad .sc-opts > span { gap: .15cqw; font-size: .8cqw; }
+.sc-scr-ipad .sc-opts svg { width: 1.6cqw; height: 1.6cqw; }
+.sc-grab { position: absolute; right: .4cqw; bottom: .4cqw; width: 1.6cqw; height: 1.6cqw; box-sizing: border-box; border-right: .22cqw solid rgba(255,255,255,.45); border-bottom: .22cqw solid rgba(255,255,255,.45); border-bottom-right-radius: 100%; }
 .sc-vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; }
 .sc-scr-mac .sc-vid { object-fit: contain; }
 .sc-back { position: absolute; inset: 0; overflow: hidden; background: #0B0D22; opacity: 0; transition: opacity .5s ease; }
@@ -504,16 +528,21 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 }
 .sc-scr-phone .sc-menu { left: 65.3%; top: 2.7%; width: 26%; padding: 1.5cqw 1.7cqw; border-radius: 2.5cqw; gap: .2cqw; }
 .sc-scr-mac .sc-menu { left: auto; right: .6cqw; top: 2.4cqw; width: 13.5cqw; padding: .7cqw .8cqw; border-radius: .8cqw; background: rgba(44,47,54,.97); }
+.sc-scr-ipad .sc-menu { right: 1.5%; top: 3.2cqw; width: 16.1cqw; padding: .93cqw 1cqw .5cqw; border-radius: 1.6cqw; }
 .scene.s-menu .sc-menu, .scene.s-pick .sc-menu { opacity: 1; transform: none; }
 .sc-menu small { color: rgba(255,255,255,.5); font-size: 1.3cqw; margin-bottom: .6cqw; }
 .sc-scr-mac .sc-menu small { font-size: .7cqw; margin-bottom: .3cqw; }
+.sc-scr-ipad .sc-menu small { font-size: .87cqw; margin-bottom: .43cqw; }
 .sc-menu > span { display: flex; align-items: center; gap: 1.4cqw; font-size: 1.75cqw; padding: .9cqw .6cqw; border-radius: 1cqw; }
 .sc-scr-mac .sc-menu > span { font-size: .9cqw; gap: .7cqw; padding: .35cqw .4cqw; border-radius: .4cqw; }
+.sc-scr-ipad .sc-menu > span { font-size: 1.09cqw; gap: .73cqw; padding: .58cqw .45cqw; border-radius: .7cqw; }
 .sc-menu svg { width: 2.2cqw; height: 2.2cqw; flex: none; stroke: var(--accent); stroke-width: 1.7; }
 .sc-scr-mac .sc-menu svg { width: 1.1cqw; height: 1.1cqw; stroke: #fff; }
+.sc-scr-ipad .sc-menu svg { width: 1.6cqw; height: 1.6cqw; }
+.sc-scr-ipad .sc-menu hr { margin: .6cqw .45cqw; }
 .sc-menu .dim { color: rgba(255,255,255,.45); }
 .sc-menu hr { border: 0; height: 1px; background: rgba(255,255,255,.14); margin: .5cqw 0; }
-.scene.s-pick .sc-scr-phone .sc-lr { background: rgba(25,216,230,.22); }
+.scene.s-pick .sc-scr-phone .sc-lr, .scene.s-pick .sc-scr-ipad .sc-lr { background: rgba(25,216,230,.22); }
 .scene.s-pick .sc-scr-mac .sc-lr { background: #2f6bd6; }
 .sc-island { position: absolute; left: 1.743%; top: 46.21%; width: 2.324%; height: 14.39%; border-radius: 999px; background: #000; }
 .sc-pill {
@@ -642,6 +671,7 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
   .scene { aspect-ratio: 420 / 300; }
   .sc-phone { left: 0; top: 58%; width: 56%; }
   .sc-mac { left: 0; top: 46%; width: 60%; }
+  .sc-ipad { left: 0; top: 40%; width: 54%; }
   .sc-pause { left: auto; right: 28px; }
   .usps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 28px; }
   .usps li { padding: 12px; }

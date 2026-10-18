@@ -25,7 +25,7 @@ iPhone, iPad and Mac. Plain HTML and CSS, served by GitHub Pages from `main`.
   changed pages after a deploy: no arguments sends every sitemap URL, or
   pass paths like `/xbox/`. The key file at the root must stay
 - `img/` — brand assets and screenshots, made from the app repo's
-  `appstore/raw/` captures: device shots are composited into Apple's Silver
+  `appstore/raw/` captures: device shots are composited into Apple's
   frames (`appstore/frames/`, never published bare), the ribbon loop comes
   from the app repo's composer, and the tour is the promo video
 
