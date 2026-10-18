@@ -527,7 +527,7 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
 @media (prefers-reduced-motion: reduce) { .scene *, .scene::before { transition: none !important; animation: none !important; } }
 .scene video::-webkit-media-controls { display: none !important; }
 
-.usps { list-style: none; margin: 44px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.usps { list-style: none; margin: 44px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .usps li { display: grid; gap: 6px; align-content: start; padding: 18px; border-radius: 18px; background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid var(--line); }
 .usps .icon, .features .icon { width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: rgba(25,216,230,.12); }
 .usps .icon { margin-bottom: 4px; }
@@ -775,3 +775,12 @@ a.card:hover { text-decoration: none; border-color: color-mix(in srgb, var(--tin
   .specs dt { border-bottom: 0; padding-bottom: 2px; }
   .specs dd { padding-top: 0; }
 }
+
+.mock-file { width: min(250px, 100%); display: grid; gap: 10px; padding: 12px; border-radius: 12px; background: rgba(28,30,44,.94); border: 1px solid rgba(255,255,255,.1); font-size: 13px; color: #fff; }
+.mock-file small { color: rgba(255,255,255,.5); font-size: 11px; }
+.mock-file .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.mock-file em { --c: #8E8E93; font-style: normal; font-weight: 500; font-size: 12px; color: var(--c); background: color-mix(in srgb, var(--c) 18%, transparent); padding: 2px 7px; border-radius: 999px; }
+.mock-file .purple { --c: #BF5AF2; } .mock-file .indigo { --c: #5E5CE6; } .mock-file .pink { --c: #FF375F; } .mock-file .cyan { --c: #64D2FF; }
+.mock-file .play { justify-self: start; display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: var(--glow); color: #0B0D22; font-weight: 700; }
+.mock-file .play i { width: 0; height: 0; border-left: 8px solid #0B0D22; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+@media (max-width: 980px) { .usps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
