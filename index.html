@@ -20,7 +20,7 @@
 <link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="icon" href="/img/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/site.css?v=17">
+<link rel="stylesheet" href="/site.css?v=18">
 <script src="/ribbon.js?v=2" defer></script>
 <script type="application/ld+json">
 {
@@ -387,11 +387,26 @@
 </main>
 
 <dialog class="tour-dialog" id="tour-dialog" aria-label="A 29-second tour of Portage on iPhone">
-  <div class="device iphone">
-    <img src="/img/tour-frame.webp" alt="" width="760" height="1551" loading="lazy">
-    <div class="screen"><video id="tour-video" muted playsinline controls preload="none"></video></div>
+  <div class="tour-bar">
+    <div class="tour-tabs" role="tablist" aria-label="Device">
+      <button type="button" role="tab" id="tour-tab-iphone" aria-controls="tour-iphone" aria-selected="true" data-device="iphone">iPhone</button>
+      <button type="button" role="tab" id="tour-tab-ipad" aria-controls="tour-ipad" aria-selected="false" tabindex="-1" data-device="ipad">iPad</button>
+      <button type="button" role="tab" id="tour-tab-mac" aria-controls="tour-mac" aria-selected="false" tabindex="-1" data-device="mac">Mac</button>
+    </div>
+    <button type="button" class="tour-close" aria-label="Close the tour">×</button>
   </div>
-  <button type="button" class="tour-close" aria-label="Close the tour" autofocus>×</button>
+  <div class="tour-panel" role="tabpanel" id="tour-iphone" aria-labelledby="tour-tab-iphone" data-name="iPhone" data-src="/img/tour.mp4" data-poster="/img/tour-poster.webp">
+    <div class="device iphone">
+      <img src="/img/tour-frame.webp" alt="" width="760" height="1551" loading="lazy">
+      <div class="screen"><video muted playsinline controls preload="none"></video></div>
+    </div>
+  </div>
+  <div class="tour-panel" role="tabpanel" id="tour-ipad" aria-labelledby="tour-tab-ipad" data-name="iPad" data-src="/img/tour-ipad.mp4" data-poster="/img/tour-ipad-poster.webp" hidden>
+    <video class="tour-flat ipad" muted playsinline controls preload="none" width="1024" height="768"></video>
+  </div>
+  <div class="tour-panel" role="tabpanel" id="tour-mac" aria-labelledby="tour-tab-mac" data-name="Mac" data-src="/img/tour-mac.mp4" data-poster="/img/tour-mac-poster.webp" hidden>
+    <video class="tour-flat mac" muted playsinline controls preload="none" width="1280" height="720"></video>
+  </div>
 </dialog>
 
 <script>
@@ -506,18 +521,50 @@
   const dialog = document.getElementById("tour-dialog");
   const link = document.querySelector("[data-tour]");
   if (!dialog || !link || !dialog.showModal) return;
-  const video = document.getElementById("tour-video");
+  const tabs = [...dialog.querySelectorAll('[role="tab"]')];
+  const panel = (tab) => document.getElementById(tab.getAttribute("aria-controls"));
+  const video = (tab) => panel(tab).querySelector("video");
+  let current = tabs[0];
+  const show = (tab) => {
+    if (tab !== current) video(current).pause();
+    current = tab;
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      panel(t).hidden = !on;
+    });
+    const box = panel(tab), v = video(tab);
+    dialog.setAttribute("aria-label", "A 29-second tour of Portage on " + box.dataset.name);
+    if (!v.getAttribute("src")) { v.poster = box.dataset.poster; v.src = box.dataset.src; }
+    try { v.currentTime = 0; } catch (e) {}
+    const p = v.play();
+    if (p && p.catch) p.catch(() => {});
+  };
+  const ua = navigator.userAgent;
+  const own = /iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? "ipad"
+    : matchMedia("(pointer: fine)").matches ? "mac" : "iphone";
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    if (!video.getAttribute("src")) { video.poster = "/img/tour-poster.webp"; video.src = "/img/tour.mp4"; }
+    const tab = tabs.find((t) => t.dataset.device === own);
     dialog.showModal();
-    video.currentTime = 0;
-    const p = video.play();
-    if (p && p.catch) p.catch(() => {});
+    show(tab);
+    tab.focus();
+  });
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => show(t));
+    t.addEventListener("keydown", (e) => {
+      const next = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+      if (next === undefined) return;
+      e.preventDefault();
+      const to = tabs[(next + tabs.length) % tabs.length];
+      show(to);
+      to.focus();
+    });
   });
   dialog.querySelector(".tour-close").addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
-  dialog.addEventListener("close", () => video.pause());
+  dialog.addEventListener("close", () => video(current).pause());
 })();
 </script>
 
@@ -529,7 +576,7 @@
       <div><b>Portage</b><a href="/whats-new/">What’s new</a><a href="/press/">Press</a><a href="/support/">Support</a><a href="/privacy/">Privacy policy</a><a href="mailto:hi@rikard.dev">hi@rikard.dev</a></div>
       <div><b>Follow</b><a href="https://x.com/PortageApp">X</a><a href="https://bsky.app/profile/portageapp.bsky.social">Bluesky</a><a href="https://www.youtube.com/@PortagePlayer">YouTube</a></div>
     </div>
-    <p class="legal">Apple, the Apple logo, AirPlay, Apple TV, iPhone, iPad and Mac are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Plex, Emby, Jellyfin, Chromecast, Google TV, DLNA, Dolby, DTS and the other product names on this site belong to their owners. Portage isn’t made by, affiliated with or endorsed by any of them. Tears of Steel (<a href="https://mango.blender.org">mango.blender.org</a>) and Sintel (<a href="https://durian.blender.org">durian.blender.org</a>) © Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. © 2026 Rikard Wissing</p>
+    <p class="legal">Apple, the Apple logo, AirPlay, Apple TV, iPhone, iPad and Mac are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Plex, Emby, Jellyfin, Chromecast, Google TV, DLNA, Dolby, DTS and the other product names on this site belong to their owners. Portage isn’t made by, affiliated with or endorsed by any of them. Tears of Steel (<a href="https://mango.blender.org">mango.blender.org</a>) and Sintel (<a href="https://durian.blender.org">durian.blender.org</a>) © Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. The tour also shows Blender’s open movies (<a href="https://studio.blender.org">studio.blender.org</a>, CC BY; Agent 327 CC BY-ND) and public-domain films. © 2026 Rikard Wissing</p>
   </div>
 </footer>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "07b00b8b3ce5484c8563552a462431bc"}'></script>
