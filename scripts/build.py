@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
+import datetime
+import json
 import re
+from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -45,6 +48,23 @@ def app_link(path):
     return f"https://apps.apple.com/app/apple-store/id{APP_ID}?{token}ct={campaign}&mt=8"
 
 
+def release_date(iso, month="%B"):
+    day = datetime.date.fromisoformat(iso)
+    return f"{day.day} {day:{month} %Y}"
+
+
+def release_html(release):
+    summary, *sections = release["notes"].split("\n\n")
+    lists = ""
+    for section in sections:
+        title, *items = section.splitlines()
+        lists += f"<h4>{escape(title)}</h4><ul>" + "".join(
+            f"<li>{escape(item.lstrip('• '), quote=False)}</li>" for item in items) + "</ul>"
+    return (f'<article><header><h3>{release["version"]}</h3><span class="platforms">{release["platforms"]}</span>'
+            f'<time datetime="{release["date"]}">{release_date(release["date"])}</time></header>'
+            f'<p class="summary">{escape(summary, quote=False)}</p>{lists}</article>')
+
+
 def read_page(file):
     head, _, html = file.read_text().partition("\n\n")
     fields = dict(line.split(": ", 1) for line in head.splitlines())
@@ -59,6 +79,8 @@ def build():
     layout = (SRC / "layout.html").read_text()
     get_block = (SRC / "get.html").read_text().rstrip("\n")
     badge = (SRC / "badge.html").read_text().strip()
+    releases = json.loads((SRC / "releases.json").read_text())
+    latest = f'{releases[0]["version"]}, {release_date(releases[0]["date"], "%b")}'
     sitemap = []
     pages = SRC / "pages"
     for file in sorted(pages.rglob("*.html"), key=lambda f: (f.stem != "index", str(f))):
@@ -66,7 +88,8 @@ def build():
         name = file.relative_to(pages).with_suffix("").as_posix()
         path = "/" if name == "index" else f"/{name}/"
         head = "".join(JSONLD.findall(html))
-        content = JSONLD.sub("", html).replace("{{get}}", get_block)
+        content = JSONLD.sub("", html).replace("{{get}}", get_block).replace("{{latest_release}}", latest)
+        content = content.replace("{{releases}}", "\n".join(release_html(r) for r in releases))
         og = ""
         if "og_title" in fields:
             og = OG.format(app_id=APP_ID, site=SITE, path=path, **fields)
@@ -80,7 +103,7 @@ def build():
             "get_href": "#get" if "{{get}}" in html else "/#get",
             "content": content.rstrip("\n"),
         })
-        page = page.replace("{{badge}}", badge.replace("{{app_link}}", app_link(path)))
+        page = page.replace("{{badge}}", badge).replace("{{app_link}}", app_link(path))
         out_file(path).parent.mkdir(parents=True, exist_ok=True)
         out_file(path).write_text(page)
         sitemap.append(f"  <url><loc>{SITE}{path}</loc><lastmod>{fields['lastmod']}</lastmod></url>\n")

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What’s new in Portage</title>
+<meta name="description" content="Every version of Portage for iPhone, iPad and Mac, newest first, with its notes as they appear on the App Store.">
+<link rel="canonical" href="https://portage.rikard.dev/whats-new/">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0B0D22">
+<meta name="apple-itunes-app" content="app-id=6816252844">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Portage">
+<meta property="og:title" content="What’s new in Portage">
+<meta property="og:description" content="Every version’s notes, as they appear on the App Store.">
+<meta property="og:image" content="https://portage.rikard.dev/img/og.png">
+<meta property="og:url" content="https://portage.rikard.dev/whats-new/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/img/favicon-96.png" sizes="96x96" type="image/png">
+<link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="icon" href="/img/favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<link rel="stylesheet" href="/site.css?v=8">
+<script src="/ribbon.js?v=2" defer></script>
+</head>
+<body>
+<div class="ambience" aria-hidden="true"></div>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/img/glyph.png" alt="" width="28" height="28">Portage</a>
+    <div class="links">
+      <a href="/#your-tv">Your TV</a>
+      <a href="/#features">Features</a>
+      <a href="#guides">Guides</a>
+      <a href="/#story">Story</a>
+      <a href="/support/">Support</a>
+      <a class="get" href="/#get" data-ribbon>Get the app</a>
+    </div>
+  </div>
+</nav>
+
+<main class="simple">
+  <div class="wrap">
+    <p class="crumb"><a href="/">Portage</a><span>/</span><span>What’s new</span></p>
+    <h1>What’s <span class="glow">new</span></h1>
+    <p class="lede">Every version’s notes, as they appear on the App Store.</p>
+    <div class="releases">
+<article><header><h3>1.0.4</h3><span class="platforms">iPhone and iPad</span><time datetime="2026-10-16">16 October 2026</time></header><p class="summary">Browser casting reaches more TVs, Samsung TVs can seek over DLNA, and the cast list shows screens, not speakers.</p><h4>CAST</h4><ul><li>Casting to a TV's web browser now connects on older LG and Samsung TVs that stalled or kept saying "Reconnecting…"</li><li>Samsung TVs can skip and seek in videos cast over DLNA</li><li>The DLNA list leaves out speakers and shows only devices that play video</li><li>AirPlay lists TVs and other video devices first</li></ul><h4>FIXES</h4><ul><li>Tapping a finished-download notification no longer crashes Portage on iOS 27</li><li>An empty Up Next shows its message centered, and every "…" button looks the same</li></ul></article>
+<article><header><h3>1.0.2</h3><span class="platforms">iPhone and iPad</span><time datetime="2026-10-13">13 October 2026</time></header><p class="summary">Casting keeps going when your iPhone loses Wi-Fi, recorded MKVs seek again, and Continue Watching gets a new look.</p><h4>CAST</h4><ul><li>If your iPhone drops off Wi-Fi mid-cast, the TV keeps playing and Portage reconnects to it, showing "Reconnecting to…" until it's back</li><li>Recorded MKV files seek again when cast, including to DLNA TVs</li><li>Your TV decides what it can play: TrueHD, DTS and other formats are tried before anything is converted</li><li>Picking an MKV while connected to a TV plays it on the TV</li><li>Casting large files to a DLNA TV no longer makes Portage quit</li><li>A stream the server drops while casting reopens by itself</li></ul><h4>WATCH</h4><ul><li>Continue Watching shows wide artwork with the poster and the time left</li><li>Detail pages on iPad get a bigger banner, poster and title</li><li>Videos this iPhone can't decode, like AV1 on older models, say so and offer casting instead of failing, and models that decode AV1 play those originals directly</li><li>Stats for nerds now shows memory use for Portage and the Chromecast</li></ul><h4>FIXES</h4><ul><li>Rotating with Search open no longer crashes</li><li>A Plex account with one reachable server is no longer shown as offline</li><li>Converting a file with MP3 audio re-encodes the sound, so the copy isn't silent</li><li>Converting with a preset you didn't change names the file after the preset</li></ul></article>
+<article><header><h3>1.0.2</h3><span class="platforms">Mac</span><time datetime="2026-10-13">13 October 2026</time></header><p class="summary">Casting keeps going when the connection drops, recorded MKVs seek again, and Continue Watching gets a new look.</p><h4>CAST</h4><ul><li>If your Mac loses the connection to a Chromecast mid-cast, the TV keeps playing and Portage reconnects to it, showing "Reconnecting to…" until it's back</li><li>Recorded MKV files seek again when cast, including to DLNA TVs</li><li>Your TV decides what it can play: TrueHD, DTS and other formats are tried before anything is converted</li><li>Casting large files to a DLNA TV no longer loads the whole file into memory</li><li>A stream the server drops while casting reopens by itself</li></ul><h4>WATCH</h4><ul><li>Continue Watching shows wide artwork with the poster and the time left</li><li>Detail pages get a bigger banner, poster and title in wide windows</li><li>Videos this Mac can't decode, like AV1 on Macs before M3, say so and offer casting instead of failing, and Macs that decode AV1 play those originals directly</li><li>Stats for nerds (right-click the player or press ⌥⌘I) now shows memory use for Portage and the Chromecast</li></ul><h4>FIXES</h4><ul><li>A Plex account with one reachable server is no longer shown as offline</li><li>Converting a file with MP3 audio re-encodes the sound, so the copy isn't silent</li><li>Converting with a preset you didn't change names the file after the preset</li></ul></article>
+<article><header><h3>1.0.1</h3><span class="platforms">Mac</span><time datetime="2026-10-09">9 October 2026</time></header><p class="summary">Casting from your Mac now does everything the iPhone does, and more of your library plays without a fuss.</p><h4>CAST</h4><ul><li>Cast Plex streams and original MKV files to Chromecast, subtitles included</li><li>Switch audio tracks while casting, set the TV's volume from your Mac, and resume a cast where you left off</li><li>Every TV and receiver plays the audio and subtitle track you chose, or tells you why it can't</li><li>Auto streams try the original quality first, then step down to what your TV can show and play</li><li>When a TV can't play something, the player says why and offers the fix, like Convert or Use AAC Audio</li><li>Jumping far ahead in a stream the server is still converting now works</li><li>AirPlay sends the video, not just the sound</li><li>DLNA lists only renderers that are online and shows the tracks the TV really plays</li></ul><h4>UP NEXT</h4><ul><li>Portage suggests what comes next and plays it automatically, keeping your subtitle language</li><li>Line up what to watch with Play Next and Add to Queue; a Chromecast can carry on through the queue by itself</li><li>After a few episodes in a row, Portage asks if you're still watching</li></ul><h4>WATCH</h4><ul><li>Stats for nerds: right-click the player or press ⌥⌘I to see resolution, bitrate, buffer and download speed</li><li>Pick a stream's video codec and resolution separately, with HEVC from Jellyfin when the server can make it</li><li>Each server shows how it's reached: Local, Internet or Relay</li><li>Seasons open with their first few episodes, with Show all for the rest</li><li>The last video you played is waiting in the bar when you open Portage</li></ul><h4>DESIGN</h4><ul><li>Redesigned Downloads and Conversions, with thumbnails, progress bars and clearer empty states</li><li>Sign-in and subtitle windows look like proper Mac dialogs</li></ul><h4>FIXES</h4><ul><li>Servers you added directly are no longer lost when the keychain is locked</li><li>One failing Emby library no longer empties the whole catalog, and Emby movie and TV libraries list films and series instead of folders</li><li>Menus no longer flicker while something plays</li></ul></article>
+    </div>
+    <p class="first-release">1.0, the first release, came out on the Mac on 7 October 2026 and on iPhone and iPad on 12 October 2026.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="columns">
+      <div id="guides"><b>Guides</b><a href="/guides/hotel-tv/">A hotel or Airbnb TV</a><a href="/guides/jellyfin-chromecast-iphone/">Jellyfin to a Chromecast from an iPhone</a><a href="/guides/plex-chromecast-iphone/">Plex to a Chromecast from an iPhone</a><a href="/guides/offline-flight/">Your library on a flight</a><a href="/cast-to-car/">Watch in your car</a><a href="/xbox/">Cast to an Xbox</a></div>
+      <div><b>Works with</b><a href="/plex/">Plex</a><a href="/emby/">Emby</a><a href="/jellyfin/">Jellyfin</a><a href="/support/#servers">A folder of files</a></div>
+      <div><b>Portage</b><a href="/whats-new/" aria-current="page">What’s new</a><a href="/press/">Press</a><a href="/support/">Support</a><a href="/privacy/">Privacy policy</a><a href="mailto:hi@rikard.dev">hi@rikard.dev</a></div>
+      <div><b>Follow</b><a href="https://x.com/PortageApp">X</a><a href="https://bsky.app/profile/portageapp.bsky.social">Bluesky</a><a href="https://www.youtube.com/@PortagePlayer">YouTube</a></div>
+    </div>
+    <p class="legal">Apple, the Apple logo, AirPlay, Apple TV, iPhone, iPad and Mac are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Plex, Emby, Jellyfin, Chromecast, Dolby, DTS and the other product names on this site belong to their owners. Portage isn’t made by, affiliated with or endorsed by any of them. Tears of Steel (<a href="https://mango.blender.org">mango.blender.org</a>) and Sintel (<a href="https://durian.blender.org">durian.blender.org</a>) © Blender Foundation, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. © 2026 Rikard Wissing</p>
+  </div>
+</footer>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "07b00b8b3ce5484c8563552a462431bc"}'></script>
+</body>
+</html>

@@ -10,6 +10,10 @@ iPhone, iPad and Mac. Plain HTML and CSS, served by GitHub Pages from `main`.
   (title, description, og_title, og_description, body, lastmod), a blank line,
   then the page's HTML. `{{badge}}` and `{{get}}` in a page pull in the shared
   pieces, and JSON-LD blocks in a page go into its head
+- `src/releases.json` — each live App Store version's notes, newest first,
+  copied from the App Store. It builds What's new (`{{releases}}`) and the
+  homepage's latest-release line (`{{latest_release}}`); add a version at the
+  top once it's live
 - `scripts/build.py` — builds every page from `src/` to its address
   (`index.html`, `plex/index.html`, …), writes `sitemap.xml` from the pages'
   `lastmod` fields, and writes the redirect pages in `REDIRECTS`. Python's
