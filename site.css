@@ -79,16 +79,8 @@ nav .links .get > .ribbon-svg { position: absolute; inset: 0; width: 100%; heigh
 nav .links .get:hover > .ribbon-svg { filter: brightness(1.45) saturate(1.2); }
 @media (max-width: 760px) { nav .links a:not(.get) { display: none; } }
 
-.badge {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 12px 18px 12px 14px; border-radius: 12px;
-  background: #000; border: 1px solid rgba(255,255,255,.22); color: #fff;
-  font-size: 15px; line-height: 1.1; text-decoration: none;
-}
-.badge:hover { text-decoration: none; border-color: rgba(255,255,255,.5); }
-.badge svg { width: 22px; height: 26px; fill: #fff; }
-.badge small { display: block; font-size: 11px; opacity: .8; margin-bottom: 2px; }
-.badge b { font-weight: 600; font-size: 17px; }
+.badge { display: block; border-radius: 9px; }
+.badge img { width: auto; height: 48px; }
 .cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
 .cta .platforms { color: var(--muted); font-size: 15px; }
 
