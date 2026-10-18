@@ -10,6 +10,7 @@ SRC = ROOT / "src"
 SITE = "https://portage.rikard.dev"
 APP_ID = "6816252844"
 PROVIDER_TOKEN = ""
+MACOS = "macOS 12"
 REDIRECTS = {"/tesla/": "/cast-to-car/#tesla"}
 JSONLD = re.compile(r'<script type="application/ld\+json">\n.*?\n</script>\n', re.S)
 
@@ -103,7 +104,7 @@ def build():
             "get_href": "#get" if "{{get}}" in html else "/#get",
             "content": content.rstrip("\n"),
         })
-        page = page.replace("{{badge}}", badge).replace("{{app_link}}", app_link(path))
+        page = page.replace("{{badge}}", badge).replace("{{app_link}}", app_link(path)).replace("{{macos}}", MACOS)
         out_file(path).parent.mkdir(parents=True, exist_ok=True)
         out_file(path).write_text(page)
         sitemap.append(f"  <url><loc>{SITE}{path}</loc><lastmod>{fields['lastmod']}</lastmod></url>\n")

@@ -18,7 +18,8 @@ iPhone, iPad and Mac. Plain HTML and CSS, served by GitHub Pages from `main`.
   (`index.html`, `plex/index.html`, …), writes `sitemap.xml` from the pages'
   `lastmod` fields, and writes the redirect pages in `REDIRECTS`. Python's
   standard library only: run `python3 scripts/build.py` and commit the output
-  with the source. Every App Store link carries a campaign token named after
+  with the source. `MACOS` is the minimum macOS every page states (`{{macos}}`).
+  Every App Store link carries a campaign token named after
   its page (`ct=site-plex`)
 - `scripts/indexnow.sh` — tells Bing and the other IndexNow engines about
   changed pages after a deploy: no arguments sends every sitemap URL, or
