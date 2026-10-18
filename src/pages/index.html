@@ -103,7 +103,7 @@ lastmod: 2026-10-18
               </div>
             </div>
             <div class="sc-dev sc-mac">
-              <img class="sc-frame" src="/img/mac-base.webp" alt="" width="1500" height="916">
+              <img class="sc-frame" src="/img/mac-full.webp" alt="" width="1500" height="916">
               <div class="sc-scr sc-scr-mac">
                 <video class="sc-vid" src="/img/tos-loop.mp4" poster="/img/tos-poster.webp" muted playsinline preload="none"></video>
                 <div class="sc-back"><img src="/img/tos-poster.webp" alt="" width="1152" height="481"></div>
@@ -123,7 +123,6 @@ lastmod: 2026-10-18
                 </div>
                 <span class="sc-pill"><svg><use href="#i-tv"/></svg>Casting to Living Room TV</span>
                 <div class="sc-menu"><small>Devices</small><span><svg><use href="#i-tv"/></svg>Kök Display</span><span class="sc-lr"><svg><use href="#i-tv"/></svg>Living Room TV</span><span class="dim"><svg><use href="#i-search"/></svg>Still searching…</span><hr><span><svg><use href="#i-globe"/></svg>Web browser…</span><span><svg><use href="#i-airplay"/></svg>AirPlay</span></div>
-                <span class="sc-wtitle">Tears of Steel</span>
               </div>
             </div>
           </div>
@@ -376,7 +375,7 @@ lastmod: 2026-10-18
     scene.classList.toggle("on-phone", device === "phone");
     scene.classList.toggle("on-mac", device === "mac");
     if (device === "phone") dev.querySelector(".sc-frame").src = "/img/" + film + "-iphone.webp";
-    dev.querySelectorAll(".sc-title, .sc-wtitle").forEach((el) => { el.textContent = F.title; });
+    dev.querySelector(".sc-title").textContent = F.title;
     dev.querySelector(".sc-badges").innerHTML = F.badges.map(([c, t]) => '<em class="' + c + '">' + t + "</em>").join("");
     dev.querySelector(".sc-t1").textContent = F.t1;
     dev.querySelector(".sc-t2").textContent = F.t2;
