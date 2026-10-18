@@ -20,7 +20,7 @@
 <link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="icon" href="/img/favicon.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
-<link rel="stylesheet" href="/site.css?v=10">
+<link rel="stylesheet" href="/site.css?v=11">
 <script src="/ribbon.js?v=2" defer></script>
 <script type="application/ld+json">
 {
@@ -98,7 +98,8 @@
       <div class="scene-col">
         <div class="scene-wrap">
           <div class="scene s-cast s-play on-phone" id="scene" role="img" aria-label="Portage plays a film on an iPhone or a Mac, then casts it to the TV, which carries on from the same moment">
-            <svg class="sc-beam" viewBox="0 0 560 400" preserveAspectRatio="none" aria-hidden="true"><path class="sc-beam-phone" d="M318 236 C 312 200 280 165 214 128"/><path class="sc-beam-mac" d="M318 190 C 312 168 280 148 214 128"/></svg>
+            <div class="sc-ambi" aria-hidden="true"><img src="/img/tos-poster.webp" alt="" width="1152" height="481"></div>
+            <svg class="sc-beam" viewBox="0 0 840 470" preserveAspectRatio="none" aria-hidden="true"><path class="sc-beam-phone" d="M232 280 C 250 220 300 190 370 180"/><path class="sc-beam-mac" d="M226 220 C 246 170 300 150 370 160"/></svg>
             <div class="sc-tv">
               <div class="sc-tv-screen">
                 <img class="sc-tv-poster" src="/img/tos-poster.webp" alt="" width="1152" height="481">
@@ -429,7 +430,7 @@
     const subs = dev.querySelector(".sc-subs");
     if (subs) { subs.classList.toggle("dim", !F.subs); subs.lastChild.textContent = F.subs || "Subtitles"; }
     dev.querySelector(".sc-back img").src = poster;
-    scene.querySelectorAll(".sc-tv-poster, .rx-poster").forEach((img) => { img.src = poster; });
+    scene.querySelectorAll(".sc-tv-poster, .rx-poster, .sc-ambi img").forEach((img) => { img.src = poster; });
     scene.querySelector(".rx-title").textContent = F.title;
     [dev.querySelector(".sc-vid"), tv].forEach((v) => {
       if (v.getAttribute("src") !== src) { v.poster = poster; v.src = src; }
