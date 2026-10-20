@@ -1,5 +1,11 @@
 [
  {
+  "version": "1.0.5",
+  "platforms": "iPhone and iPad",
+  "date": "2026-10-19",
+  "notes": "MKV files now play right in Portage, downloaded or streamed.\n\nPLAYBACK\n• Downloaded and streamed MKVs play in Portage's own player, with seeking, audio and subtitle tracks, AirPlay and picture in picture\n• Streaming an MKV plays the original file, so your server has nothing to convert\n• DTS and TrueHD soundtracks play, in MKVs and MP4s alike\n• Subtitles inside MKV files show up in the subtitle menu\n• Dragging the timeline on a downloaded MKV shows previews\n\nFIXES\n• Converting some MKV recordings no longer gives sound over a black picture"
+ },
+ {
   "version": "1.0.4",
   "platforms": "iPhone and iPad",
   "date": "2026-10-16",
