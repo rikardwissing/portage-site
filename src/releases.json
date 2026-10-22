@@ -1,5 +1,11 @@
 [
  {
+  "version": "1.0.6",
+  "platforms": "iPhone and iPad",
+  "date": "2026-10-21",
+  "notes": "AV1 films convert to formats your iPhone plays, and HDR films keep their HDR when they convert.\n\nCONVERT\n• AV1 films convert to HEVC or H.264 on iPhones that can't play AV1, where they used to say they couldn't be played\n• HDR films convert to HEVC with their HDR kept, instead of coming out washed out\n• Dolby Vision profile 8 films convert as HDR10 or HLG\n• A conversion that pauses partway no longer loses sound, so DTS, TrueHD and Opus soundtracks come through whole\n• Sound in converted files lines up exactly with the picture\n\nSUBTITLES\n• On a Plex account set to a language other than English, picking a subtitle or audio language finds the right track\n• Subtitle files stored next to a film on your Plex server show up when you stream it\n• A film with an unnamed subtitle track plays instead of failing with an error\n• The subtitle menu no longer lists the machine-translated subtitles iOS adds by itself"
+ },
+ {
   "version": "1.0.5",
   "platforms": "iPhone and iPad",
   "date": "2026-10-19",
