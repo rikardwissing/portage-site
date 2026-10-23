@@ -1,5 +1,11 @@
 [
  {
+  "version": "1.0.7",
+  "platforms": "iPhone and iPad",
+  "date": "2026-10-22",
+  "notes": "Meet the Compatibility Engine: Portage now shows when it adapts a film as it plays, and you choose whether it does.\n\nCOMPATIBILITY ENGINE\n• A badge in the player shows when Portage repackages a file or converts its sound as it plays, and tapping it shows exactly what's being done\n• It follows what's really playing, on this iPhone or on the TV you AirPlay to\n• Settings › Compatibility Engine turns it off, or just its sound conversion\n• When a film needs the engine and it's off, one tap turns it back on and plays from where you were\n\nFIXES\n• HDR films in MKV files play, instead of saying the server couldn't be reached"
+ },
+ {
   "version": "1.0.6",
   "platforms": "iPhone and iPad",
   "date": "2026-10-21",
