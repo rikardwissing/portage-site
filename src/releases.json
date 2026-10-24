@@ -1,5 +1,11 @@
 [
  {
+  "version": "1.0.6",
+  "platforms": "Mac",
+  "date": "2026-10-23",
+  "notes": "MKV files now play right in Portage, AV1 films convert, HDR films keep their HDR, and Portage runs on macOS 12 Monterey.\n\nMAC\n• Runs on macOS 12 Monterey and later\n• Dialogs fit their content, with matching headers and buttons\n\nPLAYBACK\n• Downloaded and streamed MKVs play in Portage's own player, with seeking, audio and subtitle tracks, AirPlay and picture in picture\n• Streaming an MKV plays the original file, so your server has nothing to convert\n• DTS and TrueHD soundtracks play, in MKVs and MP4s alike\n• Subtitles inside MKV files show up in the subtitle menu\n• Dragging the timeline on a downloaded MKV shows previews\n\nCONVERT\n• AV1 films convert to HEVC or H.264 on Macs that can't play AV1, where they used to say they couldn't be played\n• HDR films convert to HEVC with their HDR kept, instead of coming out washed out\n• On a Mac that can't encode HDR video, Convert says so instead of making washed-out copies\n• Dolby Vision profile 8 films convert as HDR10 or HLG\n• A conversion that pauses partway no longer loses sound, so DTS, TrueHD and Opus soundtracks come through whole\n• Sound in converted files lines up exactly with the picture\n• Converting some MKV recordings no longer gives sound over a black picture\n\nSUBTITLES\n• On a Plex account set to a language other than English, picking a subtitle or audio language finds the right track\n• Subtitle files stored next to a film on your Plex server show up when you stream it\n• A film with an unnamed subtitle track plays instead of failing with an error\n\nCAST\n• Casting to a TV's web browser now connects on older LG and Samsung TVs that stalled or kept saying \"Reconnecting…\"\n• Samsung TVs can skip and seek in videos cast over DLNA\n• The DLNA list leaves out speakers and shows only devices that play video\n• Casting a large file to a Chromecast no longer gives up with \"couldn't start this file\" while the TV is still loading it"
+ },
+ {
   "version": "1.0.7",
   "platforms": "iPhone and iPad",
   "date": "2026-10-22",
