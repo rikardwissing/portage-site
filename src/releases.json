@@ -1,5 +1,11 @@
 [
  {
+  "version": "1.0.11",
+  "platforms": "iPhone and iPad",
+  "date": "2026-10-27",
+  "notes": "Films your iPhone can't play now play anyway: Portage decodes them itself, or makes a version your Apple TV can play.\n\nSTRAIGHT TO THE SCREEN\n• Films in formats your iPhone or iPad can't play, like VP9, AV1 or VC-1, play in full on its screen, in HDR where the film has it\n• Same player as always: subtitles, sound tracks, picture in picture and the lock screen\n• The Compatibility Engine badge shows when a film is decoded this way, and how fast\n\nDOLBY VISION\n• Dolby Vision films in MKV files play in Dolby Vision on iPhones and iPads that support it, instead of HDR10\n\nAIRPLAY\n• Films your Apple TV can't play get a version it can, made as you watch and sized to your Wi-Fi\n• Switch sound tracks without leaving the TV\n• While your iPhone makes the picture, the engine's details remind you to keep Portage open\n\nCOMPATIBILITY ENGINE\n• Its details show what runs, one line per part, in hardware or software\n• A film that can't keep up at full speed says so on the badge, with one tap to convert it or stream it converted\n• Streams in original quality are never switched to your server's conversion on their own\n\nSTREAMING\n• When a converted stream won't play here, Auto asks your server for H.264 instead\n• For 10-bit films, choose HEVC 10-bit or HEVC 8-bit when your server converts\n\nFIXES\n• Streaming, casting, subtitles and downloads work with the newest Jellyfin servers, which refused them\n• A film without sound no longer shows an empty sound track"
+ },
+ {
   "version": "1.0.6",
   "platforms": "Mac",
   "date": "2026-10-23",
