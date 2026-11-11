@@ -1,6 +1,12 @@
 [
  {
   "version": "1.0.13",
+  "platforms": "iPhone and iPad",
+  "date": "2026-11-10",
+  "notes": "Your home servers now come with you.\n\nREMOTE ACCESS\n• Reach your network shares, Jellyfin and Emby from anywhere, without a VPN app\n• Sign in to Tailscale right in Portage, or add a WireGuard file from your router\n• One connection serves every server at home, and Portage only uses it when you're away\n• Adding a server while away? Look on your connection and Portage finds what's at home\n• Films play, cast and download through it, and keep going when you switch networks or lock your iPhone\n\nSOURCES\n• One Add source… for every kind of server or folder\n• Source Settings in one place: name, address, sign-in and remote access\n• Switch who's signed in on Jellyfin and Emby, even to a user the server doesn't list\n\nPLAYING\n• The player opens the moment you tap, and films start sooner on slow connections\n• Jumping to a new spot pauses picture and sound together until it's ready\n\nFEEDBACK\n• Report a problem or suggest a feature from Settings\n\nFIXES\n• A share you just added no longer shows another source's films\n• Servers found on your network that don't answer to their name are reached by address\n• Removing a source asks first everywhere"
+ },
+ {
+  "version": "1.0.13",
   "platforms": "Mac",
   "date": "2026-11-10",
   "notes": "Your home servers now come with you.\n\nREMOTE ACCESS\n• Reach your network shares, Jellyfin and Emby from anywhere, without a VPN app\n• Sign in to Tailscale right in Portage, or add a WireGuard file from your router\n• One connection serves every server at home, and Portage only uses it when you're away\n• Adding a server while away? Look on your connection and Portage finds what's at home\n• Films play, cast and download through it, and keep going when you switch networks\n\nSOURCES\n• One Add source… for every kind of server or folder\n• Source Settings in one place: name, address, sign-in and remote access\n• Switch who's signed in on Jellyfin and Emby, even to a user the server doesn't list\n\nPLAYING\n• The player opens the moment you click, and films start sooner on slow connections\n• Jumping to a new spot pauses picture and sound together until it's ready\n\nFEEDBACK\n• Report a problem or suggest a feature from Settings or the Help menu\n\nFIXES\n• A share you just added no longer shows another source's films\n• Servers found on your network that don't answer to their name are reached by address\n• Removing a source asks first everywhere"
