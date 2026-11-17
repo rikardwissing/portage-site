@@ -58,8 +58,9 @@ def release_html(release):
     summary, *sections = release["notes"].split("\n\n")
     lists = ""
     for section in sections:
-        title, *items = section.splitlines()
-        lists += f"<h4>{escape(title)}</h4><ul>" + "".join(
+        lines = section.splitlines()
+        title, items = ("", lines) if lines[0].startswith("•") else (lines[0], lines[1:])
+        lists += (f"<h4>{escape(title)}</h4>" if title else "") + "<ul>" + "".join(
             f"<li>{escape(item.lstrip('• '), quote=False)}</li>" for item in items) + "</ul>"
     return (f'<article><header><h3>{release["version"]}</h3><span class="platforms">{release["platforms"]}</span>'
             f'<time datetime="{release["date"]}">{release_date(release["date"])}</time></header>'

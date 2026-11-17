@@ -1,5 +1,11 @@
 [
  {
+  "version": "1.0.14",
+  "platforms": "iPhone and iPad",
+  "date": "2026-11-16",
+  "notes": "Animated subtitles, even on screens that cannot render them.\n\n• Keep the styling and animation of ASS subtitles on iPhone, iPad and Mac, and when casting to Chromecast, browsers, AirPlay and DLNA TVs. With burn-in, Portage puts the subtitles into the video, so the screen does not need its own subtitle renderer.\n• Burn-in also supports text and image-based subtitles. Choose Always, Only when needed or Off.\n• Faster startup and seeking when playing MKV files and converting video locally.\n• Search finds titles despite punctuation differences and common misspellings.\n• Downloaded episodes remain accessible through their shows when offline.\n• Improved subtitle and quality menus, playback recovery and error messages."
+ },
+ {
   "version": "1.0.13",
   "platforms": "iPhone and iPad",
   "date": "2026-11-10",
