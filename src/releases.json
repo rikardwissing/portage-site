@@ -1,5 +1,17 @@
 [
  {
+  "version": "1.0.15",
+  "platforms": "Mac",
+  "date": "2026-11-20",
+  "notes": "Browse DLNA servers, mark what you have watched, and filter search.\n\n• Add DLNA media servers as a source and browse their films and shows, at home or away.\n• Mark films, episodes, seasons and whole shows as watched or unwatched on every source, and remove titles from Continue Watching.\n• Filter search by films or shows, age, genre, length, decade, picture, audio and subtitle language, and what you have not watched yet. Pick a sort again to reverse it.\n• Genres from libraries in different languages now show as one.\n• When casting to a DLNA TV, Portage reconnects if the TV stops answering, and you can choose subtitles on the TV itself.\n• Changing audio or subtitles keeps the picture on screen while the stream restarts.\n• A new look on Mac in the same colours as iPhone and iPad, with a clearer sidebar and search filters behind one button.\n• Subtitles burned into the picture start straight away, and Blu-ray style picture subtitles load much faster, both on this device and when casting.\n• Films and episodes start sooner, especially files that carry many subtitle fonts, and shows open faster.\n• Smoother casting to Chromecast, with fewer pauses and sound that stays in sync.\n• AV1 films play with hardware decoding on devices that support it.\n• Picture in Picture works for every film, the Now Playing bar shows the video, and the player's options fit on one tidy row."
+ },
+ {
+  "version": "1.0.15",
+  "platforms": "iPhone and iPad",
+  "date": "2026-11-20",
+  "notes": "Browse DLNA servers, mark what you have watched, and filter search.\n\n• Add DLNA media servers as a source and browse their films and shows, at home or away.\n• Mark films, episodes, seasons and whole shows as watched or unwatched on every source, and remove titles from Continue Watching.\n• Filter search by films or shows, age, genre, length, decade, picture, audio and subtitle language, and what you have not watched yet. Pick a sort again to reverse it.\n• Genres from libraries in different languages now show as one.\n• When casting to a DLNA TV, Portage reconnects if the TV stops answering, and you can choose subtitles on the TV itself.\n• Changing audio or subtitles keeps the picture on screen while the stream restarts.\n• A clearer Browse list and iPad sidebar, with search filters behind one button on iPad.\n• Subtitles burned into the picture start straight away, and Blu-ray style picture subtitles load much faster, both on this device and when casting.\n• Films and episodes start sooner, especially files that carry many subtitle fonts, and shows open faster.\n• Smoother casting to Chromecast, with fewer pauses and sound that stays in sync.\n• AV1 films play with hardware decoding on devices that support it.\n• Casting to a DLNA TV keeps going when Portage is in the background."
+ },
+ {
   "version": "1.0.14",
   "platforms": "Mac",
   "date": "2026-11-17",
