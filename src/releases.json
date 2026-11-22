@@ -1,5 +1,17 @@
 [
  {
+  "version": "1.0.16",
+  "platforms": "Mac",
+  "date": "2026-11-22",
+  "notes": "Steadier casting to DLNA TVs.\n\n• Seek forward and back on a DLNA TV without the stream restarting, with the right time on the TV's clock.\n• Resume where you left off when casting to a DLNA TV, and pause for as long as you like without the TV dropping out.\n• Change the audio track while casting a transcoded video to a DLNA TV, and burned-in subtitles keep the format you chose.\n• If a seek doesn't take, you can try again; the video keeps playing meanwhile.\n• Opus audio no longer stalls after seeking on Chromecast, and some MKV films that wouldn't start on Chromecast and browser screens now play.\n• Chromecast and browser screens recover on their own when their buffer fills up.\n• When casting keeps stuttering, Portage suggests opening playback settings. It never changes anything by itself."
+ },
+ {
+  "version": "1.0.16",
+  "platforms": "iPhone and iPad",
+  "date": "2026-11-22",
+  "notes": "Steadier casting to DLNA TVs.\n\n• Seek forward and back on a DLNA TV without the stream restarting, with the right time on the TV's clock.\n• Resume where you left off when casting to a DLNA TV, and pause for as long as you like without the TV dropping out.\n• Change the audio track while casting a transcoded video to a DLNA TV, and burned-in subtitles keep the format you chose.\n• If a seek doesn't take, you can try again; the video keeps playing meanwhile.\n• Opus audio no longer stalls after seeking on Chromecast, and some MKV films that wouldn't start on Chromecast and browser screens now play.\n• Chromecast and browser screens recover on their own when their buffer fills up.\n• When casting keeps stuttering, Portage suggests opening playback settings. It never changes anything by itself."
+ },
+ {
   "version": "1.0.15",
   "platforms": "Mac",
   "date": "2026-11-20",
