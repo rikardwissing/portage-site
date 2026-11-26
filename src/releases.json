@@ -1,5 +1,11 @@
 [
  {
+  "version": "1.0.17",
+  "platforms": "iPhone and iPad",
+  "date": "2026-11-26",
+  "notes": "Ask Portage what to watch, one Home for all your sources, and steadier casting.\n\n• Ask: say what you're in the mood for, like \"something short and funny tonight\", and Portage picks from your own libraries with a few lines on why each fits. On devices with Apple Intelligence.\n• One Home across your sources: Continue Watching from every server in one row, latest first, and a Sources sheet to switch library.\n• The Now Playing bar sits above the navigation on every screen, with your filters beside it.\n• Drag your sources into the order you like.\n• Downloads and Conversions show everything on this device, with a History you can clear.\n• The next episode keeps your subtitle, and Portage remembers your pick for each show.\n• Quick taps on +15 s no longer trip up DLNA TVs.\n• Chromecast: when a TV turns down the picture, the sound keeps playing and Portage offers a fix.\n• MKV films seek faster on Chromecast and browser screens, and some that stalled now play.\n• Burned-in subtitles keep going when you lock your phone while casting.\n• Converting 10-bit AV1 works again, keeps AV1 when nothing needs changing, and keeps every audio track."
+ },
+ {
   "version": "1.0.16",
   "platforms": "Mac",
   "date": "2026-11-22",
